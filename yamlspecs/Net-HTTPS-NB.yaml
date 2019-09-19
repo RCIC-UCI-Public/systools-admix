@@ -1,0 +1,6 @@
+!include perlmodule.yaml
+---
+- package: perl-Net-HTTPS-NB
+  name: Net-HTTPS-NB
+  version: "0.15"
+  cpanurl:  https://cpan.metacpan.org/authors/id/O/OL/OLEG

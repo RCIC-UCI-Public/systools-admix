@@ -1,0 +1,6 @@
+!include perlmodule.yaml
+---
+- package: perl-Test-TCP
+  name: Test-TCP
+  version: "2.20"
+  cpanurl:  https://cpan.metacpan.org/authors/id/E/EX/EXODIST

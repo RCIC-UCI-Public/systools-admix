@@ -1,0 +1,31 @@
+*** xcat-core-2.14.6/buildcore.sh	2019-03-29 00:14:48.000000000 -0700
+--- xcat-core-2.14.6-new/buildcore.sh	2019-09-09 15:43:29.868000000 -0700
+***************
+*** 205,210 ****
+--- 205,211 ----
+      COMMIT_ID_LONG=`git rev-parse HEAD`
+      COMMIT_ID="${COMMIT_ID_LONG:0:7}"
+      XCAT_RELEASE="snap$(date '+%Y%m%d%H%M')"
++     XCAT_RELEASE="1"
+      echo "$XCAT_RELEASE" >Release
+  }
+  
+*** xcat-core-2.14.6/xCAT-openbmc-py/xCAT-openbmc-py.spec	2019-03-29 00:14:48.000000000 -0700
+--- xcat-core-2.14.6-new/xCAT-openbmc-py/xCAT-openbmc-py.spec	2019-09-16 17:28:13.777000000 -0700
+***************
+*** 1,7 ****
+  Summary: xCAT openbmc python
+  Name: xCAT-openbmc-py
+  Version: %{?version:%{version}}%{!?version:%(cat Version)}
+! Release: %{?release:%{release}}%{!?release:snap%(date +"%Y%m%d%H%M")}
+  Epoch: 1
+  License: EPL
+  Group: Applications/System
+--- 1,7 ----
+  Summary: xCAT openbmc python
+  Name: xCAT-openbmc-py
+  Version: %{?version:%{version}}%{!?version:%(cat Version)}
+! Release: %{?release:%{release}}%{!?release:%(cat Release)}
+  Epoch: 1
+  License: EPL
+  Group: Applications/System

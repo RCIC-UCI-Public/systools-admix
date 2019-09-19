@@ -1,0 +1,32 @@
+---
+## This is Template for MakeMaker styled perl modules
+## How to set env vars for MakeMaker : https://stackoverflow.com/questions/41527057/installing-perl-modules-to-a-specific-location
+## Env vars that MakeMaker understands: 
+- package: perlmodule 
+  name: perlmodule 
+  version: "1.0"
+  extension: tar.gz
+  cpanurl:  https://cpan.metacpan.org/authors/id/E/EX/EXODIST
+  vendor_source:  "{{ cpanurl }}/{{ name }}-{{ version }}.{{ extension }}"
+  description: |
+     perl {{name}} version {{ version }}. Configured with {{build.preconfigure}}. 
+     source code: {{ vendor_source }}
+
+  pkgname: "perl-{{ name }}"
+  src_tarball: "{{ name }}-{{ version}}.{{ extension }}"
+  src_dir: "{{ name }}-{{ version }}"
+  root: "/usr"
+  perl5lib: "{{ root }}/lib64/perl5"
+  build:
+    preconfigure: >   
+       PERL5LIB={{root}}/lib64/perl5
+       PERL_MM_OPT=INSTALL_BASE={{root}} INSTALLPRIVLIB={{perl5lib}} INSTALLARCHLIB={{perl5lib}} INSTALLSITELIB={{perl5lib}} perl Makefile.PL
+    configure: echo used perl Makefile.PL
+    pkgmake: make
+    target: 
+  install:
+    makeinstall: PERL_INSTALL_ROOT=$(ROOT) make install
+    installextra: > 
+      find $(ROOT) -name .packlist | xargs /bin/rm;
+      find $(ROOT) -type f | sed -e "s%$(ROOT)%%" | sed -e 's%/usr/man/man3/.*%/usr/man/man3/*%' | sort | uniq > ../manifest
+  fileslist: manifest

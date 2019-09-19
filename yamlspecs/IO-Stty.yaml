@@ -1,0 +1,6 @@
+!include perlbuild.yaml
+---
+- package: perl-IO-Stty
+  name: IO-Stty
+  version: "0.03"
+  cpanurl:  https://cpan.metacpan.org/authors/id/T/TO/TODDR

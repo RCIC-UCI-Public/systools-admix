@@ -1,0 +1,6 @@
+!include perlmodule.yaml
+---
+- package: perl-HTML-Form
+  name: HTML-Form
+  version: "6.04"
+  cpanurl:  https://cpan.metacpan.org/authors/id/O/OA/OALDERS

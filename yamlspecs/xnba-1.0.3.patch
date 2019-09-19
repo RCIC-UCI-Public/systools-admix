@@ -1,0 +1,83 @@
+*** xnba-1.0.3/src/drivers/bus/isa.c	2011-09-20 08:22:35.000000000 -0700
+--- ipxe-41a9a5c/src/drivers/bus/isa.c	2019-09-15 02:40:23.000000000 -0700
+***************
+*** 46,54 ****
+  #endif
+  
+  #define ISA_IOADDR( driver, ioidx )					  \
+! 	( ( (ioidx) < 0 ) ?						  \
+! 	  isa_extra_probe_addrs[ (ioidx) + ISA_EXTRA_PROBE_ADDR_COUNT ] : \
+! 	  (driver)->probe_addrs[(ioidx)] )
+  
+  static void isabus_remove ( struct root_device *rootdev );
+  
+--- 46,54 ----
+  #endif
+  
+  #define ISA_IOADDR( driver, ioidx )					  \
+! 	( ( (ioidx) >= 0 ) ?						  \
+! 	  (driver)->probe_addrs[(ioidx)] :				  \
+! 	  *( isa_extra_probe_addrs + (ioidx) + ISA_EXTRA_PROBE_ADDR_COUNT ) )
+  
+  static void isabus_remove ( struct root_device *rootdev );
+  
+*** xnba-1.0.3/src/drivers/net/myri10ge.c	2011-09-20 08:22:35.000000000 -0700
+--- ipxe-41a9a5c/src/drivers/net/myri10ge.c	2019-09-15 02:40:23.000000000 -0700
+***************
+*** 13,19 ****
+   *
+   * You should have received a copy of the GNU General Public License
+   * along with this program; if not, write to the Free Software
+!  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+   ****************************************************************/
+  
+  FILE_LICENCE ( GPL2_ONLY );
+--- 13,20 ----
+   *
+   * You should have received a copy of the GNU General Public License
+   * along with this program; if not, write to the Free Software
+!  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+!  * 02110-1301, USA.
+   ****************************************************************/
+  
+  FILE_LICENCE ( GPL2_ONLY );
+***************
+*** 304,313 ****
+  	command->response_addr.high = 0;
+  	command->response_addr.low
+  		= htonl ( virt_to_bus ( &priv->dma->command_response ) );
+! 	for ( i=0; i<36; i+=4 )
+! 		* ( uint32 * ) &command->pad[i] = 0;
+  	wmb();
+! 	* ( uint32 * ) &command->pad[36] = 0;
+  
+  	/* Wait up to 2 seconds for a response. */
+  
+--- 305,314 ----
+  	command->response_addr.high = 0;
+  	command->response_addr.low
+  		= htonl ( virt_to_bus ( &priv->dma->command_response ) );
+! 	for ( i=0; i<9; i++ )
+! 		command->pad[i] = 0;
+  	wmb();
+! 	command->pad[9] = 0;
+  
+  	/* Wait up to 2 seconds for a response. */
+  
+***************
+*** 718,724 ****
+  		return 0;
+  	}
+  
+! 	/* Initilize NonVolatile Storage state. */
+  
+  	priv->nvs.word_len_log2 = 0;
+  	priv->nvs.size		= hdr.eeprom_len;
+--- 719,725 ----
+  		return 0;
+  	}
+  
+! 	/* Initialize NonVolatile Storage state. */
+  
+  	priv->nvs.word_len_log2 = 0;
+  	priv->nvs.size		= hdr.eeprom_len;

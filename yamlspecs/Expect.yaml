@@ -1,0 +1,6 @@
+!include perlmodule.yaml
+---
+- package: perl-Expect
+  name: Expect 
+  version: "1.15"
+  cpanurl:  https://cpan.metacpan.org/authors/id/R/RG/RGIERSIG

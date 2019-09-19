@@ -1,0 +1,6 @@
+!include perlmodule.yaml
+---
+- package: perl-Test-SharedFork 
+  name: Test-SharedFork 
+  version: "0.29"
+  cpanurl:  https://cpan.metacpan.org/authors/id/E/EX/EXODIST
