@@ -1,0 +1,25 @@
+- package: go 
+  name: go 
+  version: "1.13"
+  extension: tar.gz
+  vendor_source: https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+  description: |
+    Go Compiler from  Google 
+
+  pkgname: "go"
+  src_tarball: "{{ name }}{{ version}}.linux-amd64.{{ extension }}"
+  no_src_dir: True
+  root: "/opt"
+  build:
+    configure: echo configure not used 
+    pkgmake: echo static binary download  
+    target:  
+  install:
+    makeinstall: 
+       zcat {{src_tarball}} | (cd $(ROOT)/{{root}}; $(TAR) xf - )
+  files:
+    - "{{ root }}/*"
+  rpm:
+    extras: >
+      AutoReqProv:no\n
+      %define __spec_install_post %{nil}\n
