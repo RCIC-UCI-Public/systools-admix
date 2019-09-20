@@ -1,21 +1,9 @@
+!include perlmodule.yaml
 ---
 ## This is Template for Build.PL style builds
 ## Env vars that MakeMaker understands: 
 - package: perlbuild
   name: perlbuild 
-  version: "1.0"
-  extension: tar.gz
-  cpanurl:  https://cpan.metacpan.org/authors/id/E/EX/EXODIST
-  vendor_source:  "{{ cpanurl }}/{{ name }}-{{ version }}.{{ extension }}"
-  description: |
-     perl {{name}} version {{ version }}. Built with {{build.preconfigure}}. 
-     source code: {{ vendor_source }}
-
-  pkgname: "perl-{{ name }}"
-  src_tarball: "{{ name }}-{{ version}}.{{ extension }}"
-  src_dir: "{{ name }}-{{ version }}"
-  root: "/usr"
-  perl5lib: "{{ root }}/lib64/perl5"
   build:
     preconfigure: >   
        PERL5LIB={{root}}/lib64/perl5
@@ -26,5 +14,5 @@
   install:
     makeinstall: ./Build install --destdir=$(ROOT)
     installextra: > 
+      find $(ROOT) -name .packlist | xargs /bin/rm;
       find $(ROOT) -type f | sed -e "s%$(ROOT)%%" | sed -e 's%/usr/man/man3/.*%/usr/man/man3/*%' | sort | uniq > ../manifest
-  fileslist: manifest
