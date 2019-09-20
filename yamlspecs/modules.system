@@ -1,3 +1,5 @@
 perl-JSON
 perl-DBI
-
+gnu-efi-devel
+nasm
+syslinux-devel
