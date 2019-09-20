@@ -1,0 +1,27 @@
+---
+- package: syslinux patched for xcat 
+  name: syslinux-xcat
+  version: "3.86" 
+  extension: tar.bz2
+  vendor_source: https://github.com/xcat2/xcat-dep/raw/master/syslinux/syslinux-{{ version }}.{{ extension }}
+  pkgname: "{{ name }}"
+  src_tarball: "{{ src_dir }}.{{ extension }}"
+  src_dir: syslinux-{{ version }} 
+  description: >
+    All the SYSLINUX/PXELINUX modules directly available for network
+    booting in the {{ root }} directory. 
+  root: /opt/xcat/share/xcat/netboot/syslinux 
+  
+  build:
+    patchfile: "{{ src_dir }}-multibootif.patch"
+    configure: echo no configure required 
+    dir: build
+    pkgmake: >
+       make -C com32; make installer; make -C sample tidy;
+       mkdir {{ build.dir }}; 
+       make install-all INSTALLROOT=$$(pwd)/{{build.dir}} TFTPBOOT={{root}}
+    target: 
+  install:
+    makeinstall: $(INSTALL) {{build.dir}}/{{ root }}/* $(ROOT){{ root }} 
+  files:
+    - "{{ root }}/*" 
