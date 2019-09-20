@@ -13,10 +13,12 @@
   build:
     patchfile: "{{ name }}-{{ version }}.patch"
     configure: echo no configure required
-    pkgmake: ./buildcore.sh DEST=$(PWD)
+    pkgmake: ./buildcore.sh DEST=$(PWD) 
     target: 
   install:
     makeinstall: $(INSTALL)  Release Version README.rst $(ROOT)/{{ root }}
-    installextra: pwd; ls xcat-core; $(INSTALL) ../{{name}}/*.rpm $(REDHAT.RPMS)/$(ARCH)
+    installextra: > 
+       pwd; ls xcat-core; $(INSTALL) ../{{name}}/*.rpm $(REDHAT.RPMS)/$(ARCH)
+       
   files:
     -  "{{ root }}"

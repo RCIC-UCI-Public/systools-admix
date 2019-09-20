@@ -29,3 +29,82 @@
   Epoch: 1
   License: EPL
   Group: Applications/System
+*** xcat-core-2.14.6/xCAT-server/xCAT-server.spec	2019-03-29 00:14:48.000000000 -0700
+--- xcat-core-2.14.6-new/xCAT-server/xCAT-server.spec	2019-09-20 14:23:51.480000000 -0700
+***************
+*** 48,54 ****
+  #
+  # PCM does not use or ship grub2-xcat
+  %if %nots390x
+! Requires: grub2-xcat perl-Net-HTTPS-NB perl-HTTP-Async
+  %endif
+  %endif
+  %endif
+--- 48,54 ----
+  #
+  # PCM does not use or ship grub2-xcat
+  %if %nots390x
+! Requires: perl-Net-HTTPS-NB perl-HTTP-Async
+  %endif
+  %endif
+  %endif
+*** xcat-core-2.14.6/xCAT/xCAT.spec	2019-03-29 00:14:48.000000000 -0700
+--- xcat-core-2.14.6-new/xCAT/xCAT.spec	2019-09-20 15:28:23.958000000 -0700
+***************
+*** 40,47 ****
+  
+  %if %nots390x
+  Requires: xCAT-probe  = 4:%{version}-%{release}
+- Requires: xCAT-genesis-scripts-x86_64 = 1:%{version}-%{release}
+- Requires: xCAT-genesis-scripts-ppc64  = 1:%{version}-%{release}
+  %endif
+  
+  Requires: rsync
+--- 40,45 ----
+***************
+*** 79,85 ****
+  
+  #support mixed cluster
+  %if %nots390x
+! Requires: elilo-xcat xnba-undi
+  %endif
+  
+  %ifarch i386 i586 i686 x86 x86_64
+--- 77,83 ----
+  
+  #support mixed cluster
+  %if %nots390x
+! Requires: xnba-undi
+  %endif
+  
+  %ifarch i386 i586 i686 x86 x86_64
+*** xcat-core-2.14.6/xCATsn/xCATsn.spec	2019-03-29 00:14:48.000000000 -0700
+--- xcat-core-2.14.6-new/xCATsn/xCATsn.spec	2019-09-20 15:33:34.044000000 -0700
+***************
+*** 20,27 ****
+  Requires: xCAT-client = 4:%{version}-%{release}
+  Requires: xCAT-server = 4:%{version}-%{release}
+  Requires: xCAT-probe  = 4:%{version}-%{release}
+- Requires: xCAT-genesis-scripts-x86_64 = 1:%{version}-%{release}
+- Requires: xCAT-genesis-scripts-ppc64  = 1:%{version}-%{release}
+  
+  Conflicts: xCAT
+  
+--- 20,25 ----
+***************
+*** 62,68 ****
+  
+  #support mixed cluster
+  %ifnarch s390x
+! Requires: elilo-xcat xnba-undi
+  %endif
+  
+  %ifarch i386 i586 i686 x86 x86_64
+--- 60,66 ----
+  
+  #support mixed cluster
+  %ifnarch s390x
+! Requires: xnba-undi
+  %endif
+  
+  %ifarch i386 i586 i686 x86 x86_64
