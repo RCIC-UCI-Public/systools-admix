@@ -3,3 +3,4 @@ perl-DBI
 gnu-efi-devel
 nasm
 syslinux-devel
+binutils-devel
