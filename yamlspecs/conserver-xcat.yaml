@@ -7,7 +7,8 @@
   pkgname: "{{ name }}"
   src_tarball: "{{ src_dir }}.{{ extension }}"
   src_dir: conserver-{{ version }}
-  description: Serial Console Server {{ version }}
+  description: >
+    Serial Console Server {{ version }}
   root: /usr
   build:
     configure_args: --with-openssl  --with-master=console
