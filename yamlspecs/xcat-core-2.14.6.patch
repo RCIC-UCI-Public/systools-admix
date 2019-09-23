@@ -49,18 +49,17 @@
   %endif
   %endif
 *** xcat-core-2.14.6/xCAT/xCAT.spec	2019-03-29 00:14:48.000000000 -0700
---- xcat-core-2.14.6-new/xCAT/xCAT.spec	2019-09-20 15:28:23.958000000 -0700
+--- xcat-core-2.14.6-new/xCAT/xCAT.spec	2019-09-23 12:02:04.672000000 -0700
 ***************
-*** 40,47 ****
-  
+*** 41,47 ****
   %if %nots390x
   Requires: xCAT-probe  = 4:%{version}-%{release}
-- Requires: xCAT-genesis-scripts-x86_64 = 1:%{version}-%{release}
+  Requires: xCAT-genesis-scripts-x86_64 = 1:%{version}-%{release}
 - Requires: xCAT-genesis-scripts-ppc64  = 1:%{version}-%{release}
   %endif
   
   Requires: rsync
---- 40,45 ----
+--- 41,46 ----
 ***************
 *** 79,85 ****
   
@@ -70,7 +69,7 @@
   %endif
   
   %ifarch i386 i586 i686 x86 x86_64
---- 77,83 ----
+--- 78,84 ----
   
   #support mixed cluster
   %if %nots390x
@@ -79,18 +78,17 @@
   
   %ifarch i386 i586 i686 x86 x86_64
 *** xcat-core-2.14.6/xCATsn/xCATsn.spec	2019-03-29 00:14:48.000000000 -0700
---- xcat-core-2.14.6-new/xCATsn/xCATsn.spec	2019-09-20 15:33:34.044000000 -0700
+--- xcat-core-2.14.6-new/xCATsn/xCATsn.spec	2019-09-23 12:03:28.878000000 -0700
 ***************
-*** 20,27 ****
-  Requires: xCAT-client = 4:%{version}-%{release}
+*** 21,27 ****
   Requires: xCAT-server = 4:%{version}-%{release}
   Requires: xCAT-probe  = 4:%{version}-%{release}
-- Requires: xCAT-genesis-scripts-x86_64 = 1:%{version}-%{release}
+  Requires: xCAT-genesis-scripts-x86_64 = 1:%{version}-%{release}
 - Requires: xCAT-genesis-scripts-ppc64  = 1:%{version}-%{release}
   
   Conflicts: xCAT
   
---- 20,25 ----
+--- 21,26 ----
 ***************
 *** 62,68 ****
   
@@ -100,7 +98,7 @@
   %endif
   
   %ifarch i386 i586 i686 x86 x86_64
---- 60,66 ----
+--- 61,67 ----
   
   #support mixed cluster
   %ifnarch s390x
@@ -108,3 +106,69 @@
   %endif
   
   %ifarch i386 i586 i686 x86 x86_64
+*** xcat-core-2.14.6/xCAT-genesis-builder/xCAT-genesis-base.spec	2019-03-29 00:14:48.000000000 -0700
+--- xcat-core-2.14.6-new/xCAT-genesis-builder/xCAT-genesis-base.spec	2019-09-23 12:27:45.588000000 -0700
+***************
+*** 1,6 ****
+  %define version     %%REPLACE_CURRENT_VERSION%%
+  Version: %{?version:%{version}}%{!?version:%(cat Version)}
+! Release: %{?release:%{release}}%{!?release:snap%(date +"%Y%m%d%H%M")}
+  %ifarch i386 i586 i686 x86
+  %define tarch x86
+  %endif
+--- 1,6 ----
+  %define version     %%REPLACE_CURRENT_VERSION%%
+  Version: %{?version:%{version}}%{!?version:%(cat Version)}
+! Release: %{?release:%{release}}%{!?release:1}
+  %ifarch i386 i586 i686 x86
+  %define tarch x86
+  %endif
+*** xcat-core-2.14.6/xCAT-genesis-builder/buildrpm	2019-03-29 00:14:48.000000000 -0700
+--- xcat-core-2.14.6-new/xCAT-genesis-builder/buildrpm	2019-09-23 14:44:07.971000000 -0700
+***************
+*** 12,19 ****
+  #DIR=`realpath $DIR`
+  DIR=`readlink -f $DIR`
+  BUILDARCH=`uname -m`
+- 
+  rpmdev-setuptree
+  
+  #For Openpower
+  if [ -z $1 ]; then
+--- 12,20 ----
+  #DIR=`realpath $DIR`
+  DIR=`readlink -f $DIR`
+  BUILDARCH=`uname -m`
+  rpmdev-setuptree
++ [ -v REDHAT_BASE ] ||  REDHAT_BASE=~/rpmbuild
++ 
+  
+  #For Openpower
+  if [ -z $1 ]; then
+***************
+*** 219,229 ****
+  cd -
+  
+  # create tar file
+! echo Tarring /tmp/xcatgenesis.$$/opt into ~/rpmbuild/SOURCES/xCAT-genesis-base-$BUILDARCH.tar.bz2 ...
+  cd /tmp/xcatgenesis.$$
+! tar jcf ~/rpmbuild/SOURCES/xCAT-genesis-base-$BUILDARCH.tar.bz2 opt
+  
+  # build the rpm
+! echo Building xCAT-genesis-base rpm from ~/rpmbuild/SOURCES/xCAT-genesis-base-$BUILDARCH.tar.bz2 and $DIR/xCAT-genesis-base.spec ...
+! rpmbuild -ba $DIR/xCAT-genesis-base.spec
+  rm -rf $DRACUTMODDIR
+--- 220,232 ----
+  cd -
+  
+  # create tar file
+! echo Tarring /tmp/xcatgenesis.$$/opt into $REDHAT_BASE/SOURCES/xCAT-genesis-base-$BUILDARCH.tar.bz2 ...
+  cd /tmp/xcatgenesis.$$
+! #tar jcf ~/rpmbuild/SOURCES/xCAT-genesis-base-$BUILDARCH.tar.bz2 opt
+! tar jcf $REDHAT_BASE/SOURCES/xCAT-genesis-base-$BUILDARCH.tar.bz2 opt
+  
+  # build the rpm
+! echo Building xCAT-genesis-base rpm from $REDHAT_BASE/SOURCES/xCAT-genesis-base-$BUILDARCH.tar.bz2 and $DIR/xCAT-genesis-base.spec ...
+! rpmbuild -ba --define="%_topdir $REDHAT_BASE" $DIR/xCAT-genesis-base.spec
+! 
+  rm -rf $DRACUTMODDIR

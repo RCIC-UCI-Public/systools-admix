@@ -11,14 +11,19 @@
   src_dir: "{{ name }}-{{ version }}"
   root: "{{ pkg_defaults.foundation }}/{{ name }}/{{ version }}"
   build:
+    preconfigure: >
+      /bin/sed -i xCAT-genesis-builder/xCAT-genesis-base.spec -e "s/%%REPLACE_CURRENT_VERSION%%/{{ version }}/"
     patchfile: "{{ name }}-{{ version }}.patch"
     configure: echo no configure required
-    pkgmake: ./buildcore.sh DEST=$(PWD) 
+    pkgmake: >
+     cd xCAT-genesis-builder; rpm --showrc > /tmp/rpm-env; REDHAT_BASE=$(REDHAT.ROOT) ./buildrpm; cd ..;  
+     ./buildcore.sh DEST=$(PWD) 
     target: 
   install:
     makeinstall: $(INSTALL)  Release Version README.rst $(ROOT)/{{ root }}
     installextra: > 
-       pwd; ls xcat-core; $(INSTALL) ../{{name}}/*.rpm $(REDHAT.RPMS)/$(ARCH)
+       pwd; ls xcat-core; $(INSTALL) ../{{name}}/*.rpm $(REDHAT.RPMS)/$(ARCH);
+       /bin/mv $(REDHAT.RPMS)/noarch/*rpm $(REDHAT.RPMS)/$(ARCH)
        
   files:
     -  "{{ root }}"
