@@ -1,0 +1,24 @@
+!include pymodule.yaml
+---
+- package: ansible 
+  name: ansible 
+  version: "2.8.5"
+  extension: tar.gz
+  pkgname: "{{ name }}"
+  vendor_source:  https://github.com/ansible/ansible/archive/v{{ version }}.{{ extension }}
+  description: |
+     ansible {{version}}. 
+     Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. 
+     Avoid writing scripts or custom code to deploy and update your applications -  automate in a language that 
+     approaches plain English, using SSH, with no agents to install on remote systems. 
+     https://docs.ansible.com/ansible/ https://www.ansible.com/
+
+     source code: {{ vendor_source }}
+  requires:
+     - python-bcrypt
+     - python-paramiko
+     - python-pynacl
+     - python-jinja2
+  files:
+     - /usr/lib/python2.7/site-packages/*
+     - /usr/bin/*

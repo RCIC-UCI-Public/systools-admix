@@ -18,3 +18,7 @@ lldpad
 ntp-perl
 bind-utils
 nmap-ncat
+python-devel
+python-setuptools
+libffi-devel
+

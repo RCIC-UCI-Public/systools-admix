@@ -15,3 +15,7 @@ Test-SharedFork
 Test-TCP
 xcat-core
 xnba-undi
+ansible
+bcrypt
+paramiko
+pynacl
