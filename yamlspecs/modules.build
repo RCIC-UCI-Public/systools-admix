@@ -17,5 +17,4 @@ xcat-core
 xnba-undi
 ansible
 bcrypt
-paramiko
 pynacl
