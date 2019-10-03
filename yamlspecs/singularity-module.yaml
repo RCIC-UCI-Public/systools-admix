@@ -8,14 +8,13 @@
 
   no_src_dir: True
   src_tarball: None
+  category: virtualization
   ## Define the key components of the environment module
   module:
     name: "{{ version }}"
     path: "{{ pkg_defaults.module.path }}/{{ name }}"
     prepend_path:
       - "{{ pkg_defaults.module.prepend_path }}"
-    prereq:
-      - go
 
   requires:
     - "{{ name }}_{{ version }}"

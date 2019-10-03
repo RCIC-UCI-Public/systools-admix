@@ -3,6 +3,7 @@ Crypt-Rijndael
 Expect
 goconserver
 go
+go-module
 HTML-Form
 HTTP-Async
 HTTP-Server-Simple
@@ -18,3 +19,5 @@ xnba-undi
 ansible
 bcrypt
 pynacl
+singularity
+singularity-module

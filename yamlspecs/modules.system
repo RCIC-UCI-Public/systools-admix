@@ -21,4 +21,6 @@ nmap-ncat
 python-devel
 python-setuptools
 libffi-devel
-
+openssl-devel
+libuuid-devel
+cryptsetup
