@@ -4,3 +4,4 @@ HTTP-Server-Simple
 HTTP-Async
 IO-Select
 go
+go-module

@@ -1,0 +1,21 @@
+# Builds the module for go. It first includes all the definitions
+# for the go build and then overwrites specific keys
+!include go.yaml
+!include /opt/rcic/include/rcic-module.yaml
+---
+- package: Go Module
+  pkgname: "{{ name }}-module"
+
+  root: /opt/{{ name }}
+  no_src_dir: True
+  src_tarball: None
+  ## Define the key components of the environment module
+  module:
+    name: "{{ version }}"
+    path: "{{ pkg_defaults.module.path }}/{{ name }}"
+    prepend_path:
+      - "{{ pkg_defaults.module.prepend_path }}"
+
+  requires:
+    - "{{ name }}"
+    - rcic-module-support
