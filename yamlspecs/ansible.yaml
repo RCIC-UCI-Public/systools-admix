@@ -19,6 +19,7 @@
      - python-paramiko
      - python-pynacl
      - python-jinja2
+     - PyYAML
   files:
      - /usr/lib/python2.7/site-packages/*
      - /usr/bin/*
