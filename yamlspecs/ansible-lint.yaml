@@ -1,0 +1,17 @@
+!include pymodule.yaml
+---
+- package: ansible-lint
+  name: ansible-lint 
+  version: "4.1.0"
+  extension: tar.gz
+  pkgname: "{{ name }}"
+  vendor_source: https://github.com/ansible/{{ name }}/archive/v{{ version }}.{{ extension }}
+  description: |
+     {{ name }} {{version}}. 
+     ansible-lint checks playbooks for practices and behaviour that could potentially be improved.
+     source code: {{ vendor_source }}
+  requires:
+     - ansible
+  files:
+     - /usr/lib/python2.7/site-packages/*
+     - /usr/bin/*

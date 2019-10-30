@@ -17,6 +17,7 @@ Test-TCP
 xcat-core
 xnba-undi
 ansible
+ansible-lint
 bcrypt
 pynacl
 singularity
