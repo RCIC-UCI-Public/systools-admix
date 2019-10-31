@@ -5,14 +5,13 @@
 ---
 - package: Singularity Module
   pkgname: "{{ name }}_{{ version }}-module"
-
+  category: TOOLS
   no_src_dir: True
   src_tarball: None
-  category: virtualization
   ## Define the key components of the environment module
   module:
     name: "{{ version }}"
-    path: "{{ pkg_defaults.module.path }}/{{ name }}"
+    path: "{{ pkg_defaults.module.RCICmpath }}/{{category}}/{{ name }}"
     prepend_path:
       - "{{ pkg_defaults.module.prepend_path }}"
 
