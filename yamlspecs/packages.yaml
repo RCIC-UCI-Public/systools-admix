@@ -54,6 +54,7 @@ build:
    - xnba-undi
    - ansible
    - ansible-lint
+   - ruamel-yaml 
    - bcrypt
    - pynacl
    - singularity
