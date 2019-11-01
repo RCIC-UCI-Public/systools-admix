@@ -53,11 +53,16 @@ build:
    - xcat-core
    - xnba-undi
    - ansible
-   - ansible-lint
-   - ruamel-yaml 
    - bcrypt
    - pynacl
    - singularity
    - singularity-module
+   - ansible-lint
+   - cryptography
+   - enum34
+   - cffi
+   - ruamel-yaml-clib
+   - ruamel-yaml
+   - ruamel-ordereddict
 manifest:
    - "{{ build }}"

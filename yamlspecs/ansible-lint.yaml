@@ -12,6 +12,13 @@
      source code: {{ vendor_source }}
   requires:
      - ansible
+     - python-ruamel.yaml
+     - python-ruamel.yaml.clib
+     - python-ruamel.ordereddict
+     - python-cryptography
+     - python-enum34
+     - python-cffi
+     - python-pycparser
   files:
      - /usr/lib/python2.7/site-packages/*
      - /usr/bin/*

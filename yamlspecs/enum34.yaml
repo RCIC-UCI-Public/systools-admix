@@ -1,0 +1,12 @@
+!include pymodule.yaml
+---
+- package: enum34 
+  name: enum34 
+  version: "1.1.6"
+  extension: tar.gz
+  vendor_source:  https://files.pythonhosted.org/packages/bf/3e/31d502c25302814a7c2f1d3959d2a3b3f78e509002ba91aea64993936876/{{ name }}-{{ version }}.{{ extension }}
+  description: |
+     {{ name }} {{version}}.  Backport of enum class in python 3.4 to older versions of python 
+     source code: {{ vendor_source }}
+  files:
+     - /usr/lib/python*/site-packages/*
