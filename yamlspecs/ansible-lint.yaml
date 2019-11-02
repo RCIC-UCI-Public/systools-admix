@@ -19,6 +19,10 @@
      - python-enum34
      - python-cffi
      - python-pycparser
+     - python-setuptools >= 40.6.0-1
+     - python-six
+     - python-ipaddress
+
   files:
      - /usr/lib/python2.7/site-packages/*
      - /usr/bin/*
