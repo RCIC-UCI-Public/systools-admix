@@ -7,7 +7,7 @@
     Go Compiler from  Google 
 
   pkgname: "go"
-  src_tarball: "{{ name }}{{ version}}.linux-amd64.{{ extension }}"
+  src_tarball: "{{name}}{{version}}.linux-amd64.{{extension}}"
   no_src_dir: True
   root: "/opt"
   build:
@@ -18,7 +18,7 @@
     makeinstall: 
        zcat {{src_tarball}} | (cd $(ROOT)/{{root}}; $(TAR) xf - )
   files:
-    - "{{ root }}/*"
+    - "{{root}}/*"
   rpm:
     extras: >
       AutoReqProv:no\n

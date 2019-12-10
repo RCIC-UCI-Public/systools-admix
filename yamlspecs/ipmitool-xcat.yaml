@@ -4,9 +4,9 @@
   version: "1.8.18" 
   extension: tar.gz
   vendor_source: https://github.com/ipmitool/ipmitool/releases/download/IPMITOOL_1_8_18/ipmitool-{{version}}.tar.gz 
-  pkgname: "{{ name }}"
-  src_tarball: ipmitool-{{ version }}.{{ extension }}
-  src_dir: ipmitool-{{ version }}
+  pkgname: "{{name}}"
+  src_tarball: ipmitool-{{version}}.{{extension}}
+  src_dir: ipmitool-{{version}}
   description: | 
      This package contains a utility for interfacing with devices that support
      the Intelligent Platform Management Interface specification.  IPMI is
@@ -33,4 +33,4 @@
   install:
     makeinstall: $(INSTALL) -m755 src/ipmitool $(ROOT){{root}}/ipmitool-xcat
   files:
-    - "{{ root }}/*" 
+    - "{{root}}/*" 

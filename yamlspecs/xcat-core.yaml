@@ -3,27 +3,27 @@
   name: xcat-core
   version: "2.14.6"
   extension: tar.gz
-  vendor_source: https://github.com/xcat2/xcat-core/archive/{{ version }}.tar.gz
+  vendor_source: https://github.com/xcat2/xcat-core/archive/{{version}}.tar.gz
   description: |
      xCAT is a toolkit for deployment and administration of clusters of all sizes.
-  pkgname: "{{ name }}_{{ version }}"
-  src_tarball: "{{ name }}-{{ version}}.{{ extension }}"
-  src_dir: "{{ name }}-{{ version }}"
-  root: "{{ pkg_defaults.foundation }}/{{ name }}/{{ version }}"
+  pkgname: "{{name}}_{{version}}"
+  src_tarball: "{{name}}-{{version}}.{{extension}}"
+  src_dir: "{{name}}-{{version}}"
+  root: "{{pkg_defaults.foundation}}/{{name}}/{{version}}"
   build:
     preconfigure: >
-      /bin/sed -i xCAT-genesis-builder/xCAT-genesis-base.spec -e "s/%%REPLACE_CURRENT_VERSION%%/{{ version }}/"
-    patchfile: "{{ name }}-{{ version }}.patch"
+      /bin/sed -i xCAT-genesis-builder/xCAT-genesis-base.spec -e "s/%%REPLACE_CURRENT_VERSION%%/{{version}}/"
+    patchfile: "{{name}}-{{version}}.patch"
     configure: echo no configure required
     pkgmake: >
      cd xCAT-genesis-builder; rpm --showrc > /tmp/rpm-env; REDHAT_BASE=$(REDHAT.ROOT) ./buildrpm; cd ..;  
      ./buildcore.sh DEST=$(PWD) 
     target: 
   install:
-    makeinstall: $(INSTALL)  Release Version README.rst $(ROOT)/{{ root }}
+    makeinstall: $(INSTALL)  Release Version README.rst $(ROOT)/{{root}}
     installextra: > 
        pwd; ls xcat-core; $(INSTALL) ../{{name}}/*.rpm $(REDHAT.RPMS)/$(ARCH);
        /bin/mv $(REDHAT.RPMS)/noarch/*rpm $(REDHAT.RPMS)/$(ARCH)
        
   files:
-    -  "{{ root }}"
+    -  "{{root}}"

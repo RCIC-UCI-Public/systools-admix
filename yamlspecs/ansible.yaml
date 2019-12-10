@@ -4,8 +4,8 @@
   name: ansible 
   version: "2.8.5"
   extension: tar.gz
-  pkgname: "{{ name }}"
-  vendor_source:  https://github.com/ansible/ansible/archive/v{{ version }}.{{ extension }}
+  pkgname: "{{name}}"
+  vendor_source:  https://github.com/ansible/ansible/archive/v{{version}}.{{extension}}
   description: |
      ansible {{version}}. 
      Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy. 
@@ -13,7 +13,7 @@
      approaches plain English, using SSH, with no agents to install on remote systems. 
      https://docs.ansible.com/ansible/ https://www.ansible.com/
 
-     source code: {{ vendor_source }}
+     source code: {{vendor_source}}
   requires:
      - python-bcrypt
      - python-paramiko

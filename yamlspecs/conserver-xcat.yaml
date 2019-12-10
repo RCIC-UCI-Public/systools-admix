@@ -4,23 +4,23 @@
   version: "8.2.4" 
   extension: tar.gz
   vendor_source: https://github.com/conserver/conserver/releases/download/v{{version}}/conserver-{{version}}.tar.gz
-  pkgname: "{{ name }}"
-  src_tarball: "{{ src_dir }}.{{ extension }}"
-  src_dir: conserver-{{ version }}
+  pkgname: "{{name}}"
+  src_tarball: "{{src_dir}}.{{extension}}"
+  src_dir: conserver-{{version}}
   description: >
-    Serial Console Server {{ version }}
+    Serial Console Server {{version}}
   root: /usr
   build:
     configure_args: --with-openssl  --with-master=console
     target: 
   files:
-    - "{{ root }}/bin/*" 
-    - "{{ root }}/sbin/*" 
-    - "{{ root }}/lib/*" 
-    - "{{ root }}/share/man/man1/*" 
-    - "{{ root }}/share/man/man5/*" 
-    - "{{ root }}/share/man/man8/*" 
-    - "{{ root }}/share/examples/*" 
+    - "{{root}}/bin/*" 
+    - "{{root}}/sbin/*" 
+    - "{{root}}/lib/*" 
+    - "{{root}}/share/man/man1/*" 
+    - "{{root}}/share/man/man5/*" 
+    - "{{root}}/share/man/man8/*" 
+    - "{{root}}/share/examples/*" 
   provides:
     - conserver
     - conserver-client

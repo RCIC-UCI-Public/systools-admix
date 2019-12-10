@@ -3,17 +3,17 @@
   name: singularity 
   version: 3.4.1 
   extension: tar.gz
-  vendor_source: https://github.com/sylabs/singularity/archive/v{{ version }}.tar.gz 
-  description: Singularity {{ version }}
-  root: "{{ pkg_defaults.foundation }}/{{ name }}/{{ version }}"
+  vendor_source: https://github.com/sylabs/singularity/archive/v{{version}}.tar.gz 
+  description: Singularity {{version}}
+  root: "{{pkg_defaults.foundation}}/{{name}}/{{version}}"
   build:
     configure: ./mconfig 
-    configure_args: --prefix={{ root }}
+    configure_args: --prefix={{root}}
     target: -C builddir 
     modules: go
   install:
     makeinstall: make DESTDIR=$(ROOT) -C builddir install
-    installextra: $(INSTALL) -m 644  README* COPYRIGHT $(ROOT){{ root }}
+    installextra: $(INSTALL) -m 644  README* COPYRIGHT $(ROOT){{root}}
 
   rpm: !include rpm.extras.yaml
   requires:

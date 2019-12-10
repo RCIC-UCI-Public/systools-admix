@@ -4,9 +4,9 @@
   name: ruamel.ordereddict
   version: "0.4.14"
   extension: tar.gz
-  vendor_source: https://files.pythonhosted.org/packages/7d/fd/522c4722347aaf01e6bc8cce486130d83c52c72d3c3c2bbe3cbb02dddd4d/ruamel.ordereddict-{{ version }}.{{ extension }}
+  vendor_source: https://files.pythonhosted.org/packages/7d/fd/522c4722347aaf01e6bc8cce486130d83c52c72d3c3c2bbe3cbb02dddd4d/ruamel.ordereddict-{{version}}.{{extension}}
   description: |
-     {{ name }} {{version}} is a YAML 1.2 loader/dumper package for Python. 
-     source code: {{ vendor_source }}
+     {{name}} {{version}} is a YAML 1.2 loader/dumper package for Python. 
+     source code: {{vendor_source}}
   files:
      - /usr/lib64/python*/site-packages/*

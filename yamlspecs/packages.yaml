@@ -65,4 +65,4 @@ build:
    - ruamel-yaml
    - ruamel-ordereddict
 manifest:
-   - "{{ build }}"
+   - "{{build}}"

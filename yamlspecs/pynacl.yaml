@@ -4,9 +4,9 @@
   name: pynacl
   version: "1.2.1"
   extension: tar.gz
-  vendor_source:  https://github.com/pyca/pynacl/archive/{{ version }}.{{ extension }}
+  vendor_source:  https://github.com/pyca/pynacl/archive/{{version}}.{{extension}}
   description: |
      pynacl {{version}}. PyNaCl is a Python binding to libsodium, which is a fork of the Networking and Cryptography 
      library. These libraries have a stated goal of improving usability, security and speed. It supports Python 2.7 
      and 3.4+ as well as PyPy 2.6+.
-     source code: {{ vendor_source }}
+     source code: {{vendor_source}}

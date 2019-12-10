@@ -4,12 +4,12 @@
   name: ansible-lint 
   version: "4.1.0"
   extension: tar.gz
-  pkgname: "{{ name }}"
-  vendor_source: https://github.com/ansible/{{ name }}/archive/v{{ version }}.{{ extension }}
+  pkgname: "{{name}}"
+  vendor_source: https://github.com/ansible/{{name}}/archive/v{{version}}.{{extension}}
   description: |
-     {{ name }} {{version}}. 
+     {{name}} {{version}}. 
      ansible-lint checks playbooks for practices and behaviour that could potentially be improved.
-     source code: {{ vendor_source }}
+     source code: {{vendor_source}}
   requires:
      - ansible
      - python-ruamel.yaml

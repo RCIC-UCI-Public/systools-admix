@@ -7,16 +7,16 @@
   version: "1.0"
   extension: tar.gz
   cpanurl:  https://cpan.metacpan.org/authors/id/E/EX/EXODIST
-  vendor_source:  "{{ cpanurl }}/{{ name }}-{{ version }}.{{ extension }}"
+  vendor_source:  "{{cpanurl}}/{{name}}-{{version}}.{{extension}}"
   description: |
-     perl {{name}} version {{ version }}. Configured with {{build.preconfigure}}. 
-     source code: {{ vendor_source }}
+     perl {{name}} version {{version}}. Configured with {{build.preconfigure}}. 
+     source code: {{vendor_source}}
 
-  pkgname: "perl-{{ name }}"
-  src_tarball: "{{ name }}-{{ version}}.{{ extension }}"
-  src_dir: "{{ name }}-{{ version }}"
+  pkgname: "perl-{{name}}"
+  src_tarball: "{{name}}-{{version}}.{{extension}}"
+  src_dir: "{{name}}-{{version}}"
   root: "/usr"
-  perl5lib: "{{ root }}/lib64/perl5"
+  perl5lib: "{{root}}/lib64/perl5"
   build:
     preconfigure: >   
        PERL5LIB={{root}}/lib64/perl5

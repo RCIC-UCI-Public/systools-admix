@@ -8,7 +8,7 @@
     goconserver is written in golang which intend to replace the conserver which used in xcat2. 
     The microservice based design makes it easy to integrate with other tool which hope to log the terminal sessions. 
 
-  src_tarball: "{{ name }}-{{ version}}.{{ extension }}"
+  src_tarball: "{{name}}-{{version}}.{{extension}}"
   root: "/usr/bin"
   build:
     configure: echo configure not used 
@@ -23,7 +23,7 @@
        $(INSTALL) etc/goconserver/client.sh   $(ROOT)/etc/profile.d/congo.sh
 
   files:
-    - "{{ root }}/*"
+    - "{{root}}/*"
     - /etc/goconserver
     - /etc/profile.d/*
     - /var/lib/*

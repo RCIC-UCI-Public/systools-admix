@@ -4,18 +4,18 @@
 !include /opt/rcic/include/rcic-module.yaml
 ---
 - package: Go Module
-  pkgname: "{{ name }}-module"
+  pkgname: "{{name}}-module"
 
-  root: /opt/{{ name }}
+  root: /opt/{{name}}
   no_src_dir: True
   src_tarball: None
   ## Define the key components of the environment module
   module:
-    name: "{{ version }}"
-    path: "{{ pkg_defaults.module.path }}/{{ name }}"
+    name: "{{version}}"
+    path: "{{pkg_defaults.module.path}}/{{name}}"
     prepend_path:
-      - "{{ pkg_defaults.module.prepend_path }}"
+      - "{{pkg_defaults.module.prepend_path}}"
 
   requires:
-    - "{{ name }}"
+    - "{{name}}"
     - rcic-module-support
