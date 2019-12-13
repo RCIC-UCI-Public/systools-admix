@@ -1,24 +1,22 @@
+!include rcic-package.yaml
+---
 - package: go 
   name: go 
-  version: "1.13"
-  extension: tar.gz
-  vendor_source: https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+  versions: !include versions.yaml
+  version: "{{versions.go}}"
+  vendor_source: https://dl.google.com/go/{{name}}{{version}}.linux-amd64.{{extension}}
   description: |
-    Go Compiler from  Google 
-
-  pkgname: "go"
+    Google {{name}} is an open source programming language and compier that
+    makes it easy to build simple, reliable, and efficient software
   src_tarball: "{{name}}{{version}}.linux-amd64.{{extension}}"
   no_src_dir: True
-  root: "/opt"
   build:
     configure: echo configure not used 
     pkgmake: echo static binary download  
     target:  
   install:
     makeinstall: 
-       zcat {{src_tarball}} | (cd $(ROOT)/{{root}}; $(TAR) xf - )
-  files:
-    - "{{root}}/*"
+       zcat {{src_tarball}} | (cd $(ROOT)/{{root}}; $(TAR) xf -  --strip 1)
   rpm:
     extras: >
       AutoReqProv:no\n
