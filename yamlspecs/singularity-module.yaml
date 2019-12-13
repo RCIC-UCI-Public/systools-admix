@@ -1,20 +1,6 @@
-# Builds the module for singularity. It first includes all the definitions
-# for the singularity build and then overwrites specific keys
+# Builds the module for singularity. 
 !include singularity.yaml
-!include /opt/rcic/include/rcic-module.yaml
+!include rcic-module.yaml
 ---
 - package: Singularity Module
-  pkgname: "{{name}}_{{version}}-module"
   category: TOOLS
-  no_src_dir: True
-  src_tarball: None
-  ## Define the key components of the environment module
-  module:
-    name: "{{version}}"
-    path: "{{pkg_defaults.module.RCICmpath}}/{{category}}/{{name}}"
-    prepend_path:
-      - "{{pkg_defaults.module.prepend_path}}"
-
-  requires:
-    - "{{name}}_{{version}}"
-    - rcic-module-support
