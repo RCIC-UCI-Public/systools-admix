@@ -2,5 +2,5 @@
 ---
 - package: perl-HTTP-Server-Simple 
   name: HTTP-Server-Simple 
-  version: "0.52"
+  version: "{{versions.HTTP_Server_Simple}}"
   cpanurl:  https://cpan.metacpan.org/authors/id/B/BP/BPS

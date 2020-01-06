@@ -9,10 +9,11 @@
        PERL5LIB={{root}}/lib64/perl5
        PERL_MB_OPT='--install_base={{root}} --install_privlib={{perl5lib}} --install_archlib={{perl5lib}} --install_sitelib={{perl5lib}}' perl Build.PL
     configure: echo used perl Build.PL 
-    pkgmake:  ./Build  
+    pkgmake:
     target: 
   install:
-    makeinstall: ./Build install --destdir=$(ROOT)
+    makeinstall: perl Build; perl Build --destdir=$(ROOT) install
     installextra: > 
       find $(ROOT) -name .packlist | xargs /bin/rm;
       find $(ROOT) -type f | sed -e "s%$(ROOT)%%" | sed -e 's%/usr/man/man3/.*%/usr/man/man3/*%' | sort | uniq > ../manifest
+

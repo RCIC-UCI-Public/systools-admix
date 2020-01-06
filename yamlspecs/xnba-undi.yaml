@@ -1,14 +1,14 @@
+!include rcic-package.yaml
+---
 - package: xnba-undi
   name: xnba 
-  version: "1.0.3"
+  versions: !include versions.yaml
+  version: "{{versions.xnba_undi}}"
   extension: tar.bz2
   vendor_source: https://github.com/xcat2/xcat-dep/raw/master/xnba/xnba-{{version}}.{{extension}}
   description: |
      xCAT network boot agent version {{version}}
-
   pkgname: "xnba-undi"
-  src_tarball: "{{name}}-{{version}}.{{extension}}"
-  src_dir: "{{name}}-{{version}}"
   root: "/tftpboot/xcat"
   build:
     patchfile: "{{name}}-{{version}}.patch"

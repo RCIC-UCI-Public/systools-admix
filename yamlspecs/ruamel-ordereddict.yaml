@@ -2,7 +2,7 @@
 ---
 - package: ruamel-ordereddict
   name: ruamel.ordereddict
-  version: "0.4.14"
+  version: "{{versions.ruamel_ordereddict}}"
   extension: tar.gz
   vendor_source: https://files.pythonhosted.org/packages/7d/fd/522c4722347aaf01e6bc8cce486130d83c52c72d3c3c2bbe3cbb02dddd4d/ruamel.ordereddict-{{version}}.{{extension}}
   description: |

@@ -2,5 +2,5 @@
 ---
 - package: perl-Crypt-Rijndael
   name: Crypt-Rijndael 
-  version: "1.14"
+  version: "{{versions.Crypt_Rijndael}}"
   cpanurl:  https://cpan.metacpan.org/authors/id/L/LE/LEONT

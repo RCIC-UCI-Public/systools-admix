@@ -2,6 +2,6 @@
 ---
 - package: perl-IO-Select
   name: IO 
-  version: "1.39"
+  version: "{{versions.IO_Select}}"
   pkgname: "{{package}}"
   cpanurl:  https://cpan.metacpan.org/authors/id/T/TO/TODDR

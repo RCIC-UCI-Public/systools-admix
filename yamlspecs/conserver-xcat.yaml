@@ -1,8 +1,9 @@
+!include rcic-package.yaml
 ---
 - package: serial console server 
   name: conserver-xcat
-  version: "8.2.4" 
-  extension: tar.gz
+  versions: !include versions.yaml
+  version: "{{versions.conserver_xcat}}"
   vendor_source: https://github.com/conserver/conserver/releases/download/v{{version}}/conserver-{{version}}.tar.gz
   pkgname: "{{name}}"
   src_tarball: "{{src_dir}}.{{extension}}"

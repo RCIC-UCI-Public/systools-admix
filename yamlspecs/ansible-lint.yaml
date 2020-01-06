@@ -2,14 +2,11 @@
 ---
 - package: ansible-lint
   name: ansible-lint 
-  version: "4.1.0"
-  extension: tar.gz
-  pkgname: "{{name}}"
+  version: "{{versions.ansible_lint}}"
   vendor_source: https://github.com/ansible/{{name}}/archive/v{{version}}.{{extension}}
   description: |
-     {{name}} {{version}}. 
-     ansible-lint checks playbooks for practices and behaviour that could potentially be improved.
-     source code: {{vendor_source}}
+     {{name}} {{version}}. Ansible-lint checks playbooks for practices and behaviour
+     that could potentially be improved. {{description_src}}
   requires:
      - ansible
      - python-ruamel.yaml
@@ -22,7 +19,6 @@
      - python-setuptools >= 40.6.0-1
      - python-six
      - python-ipaddress
-
   files:
      - /usr/lib/python2.7/site-packages/*
      - /usr/bin/*

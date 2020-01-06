@@ -2,5 +2,9 @@
 ---
 - package: perl-IO-Stty
   name: IO-Stty
-  version: "0.03"
-  cpanurl:  https://cpan.metacpan.org/authors/id/T/TO/TODDR
+  version: "{{versions.IO_Stty}}"
+  cpanurl: https://cpan.metacpan.org/authors/id/T/TO/TODDR
+  files:
+    - "{{root}}/bin/*"
+    - "{{root}}/man/man3/*"
+    - "{{root}}/lib/perl5/*"

@@ -1,7 +1,7 @@
 - package: goconserver 
   name: goconserver
   pkgname: "{{name}}"
-  version: "0.3.2"
+  version: "{{versions.goconserver}}"
   extension: tar.gz
   vendor_source: https://github.com/xcat2/goconserver/archive/v{{version}}.tar.gz
   description: |

@@ -1,8 +1,9 @@
+!include rcic-package.yaml
 ---
 - package: xcat version of ipmitool 
   name: ipmitool-xcat
-  version: "1.8.18" 
-  extension: tar.gz
+  versions: !include versions.yaml
+  version: "{{versions.ipmitool_xcat}}"
   vendor_source: https://github.com/ipmitool/ipmitool/releases/download/IPMITOOL_1_8_18/ipmitool-{{version}}.tar.gz 
   pkgname: "{{name}}"
   src_tarball: ipmitool-{{version}}.{{extension}}
@@ -21,14 +22,11 @@
      displaying sensor values, displaying the contents of the System Event
      Log (SEL), printing Field Replaceable Unit (FRU) information, reading and
      setting LAN configuration, and chassis power control.
- 
   root: /opt/xcat/bin
   build:
     configure:  CFLAGS='-Wno-unused-parameter' ./configure
-
     configure_args: >
       --enable-file-security --disable-intf-free 
-
     target: 
   install:
     makeinstall: $(INSTALL) -m755 src/ipmitool $(ROOT){{root}}/ipmitool-xcat

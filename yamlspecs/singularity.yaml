@@ -1,11 +1,12 @@
+!include rcic-package.yaml
 ---
 - package: Singularity Container Runtime 
   name: singularity 
-  version: 3.4.1 
-  extension: tar.gz
+  versions: !include versions.yaml
+  version: "{{versions.singularity}}"
   vendor_source: https://github.com/sylabs/singularity/archive/v{{version}}.tar.gz 
   description: Singularity {{version}}
-  root: "{{pkg_defaults.foundation}}/{{name}}/{{version}}"
+  parent: "{{pkg_defaults.foundation}}/{{name}}"
   build:
     configure: ./mconfig 
     configure_args: --prefix={{root}}
@@ -14,7 +15,6 @@
   install:
     makeinstall: make DESTDIR=$(ROOT) -C builddir install
     installextra: $(INSTALL) -m 644  README* COPYRIGHT $(ROOT){{root}}
-
   rpm: !include rpm.extras.yaml
   requires:
     - squashfs-tools  

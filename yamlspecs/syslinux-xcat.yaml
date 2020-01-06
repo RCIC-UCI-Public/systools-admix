@@ -1,17 +1,16 @@
+!include rcic-package.yaml
 ---
 - package: syslinux patched for xcat 
-  name: syslinux-xcat
-  version: "3.86" 
+  name: syslinux
+  pkgname: "{{name}}-xcat"
+  versions: !include versions.yaml
+  version: "{{versions.syslinux_xcat}}"
   extension: tar.bz2
-  vendor_source: https://github.com/xcat2/xcat-dep/raw/master/syslinux/syslinux-{{version}}.{{extension}}
-  pkgname: "{{name}}"
-  src_tarball: "{{src_dir}}.{{extension}}"
-  src_dir: syslinux-{{version}} 
+  vendor_source: https://github.com/xcat2/xcat-dep/raw/master/syslinux/{{name}}-{{version}}.{{extension}}
   description: >
     All the SYSLINUX/PXELINUX modules directly available for network
     booting in the {{root}} directory. 
   root: /opt/xcat/share/xcat/netboot/syslinux 
-  
   build:
     patchfile: "{{src_dir}}-multibootif.patch"
     configure: echo no configure required 

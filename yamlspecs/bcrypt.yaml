@@ -2,9 +2,8 @@
 ---
 - package: bcrypt
   name: bcrypt 
-  version: "3.1.4"
-  extension: tar.gz
+  version: "{{versions.bcrypt}}"
   vendor_source:  https://github.com/pyca/bcrypt/archive/{{version}}.{{extension}}
   description: |
-     bcrypt {{version}}.  Good password hashing for your software and your servers.
-     source code: {{vendor_source}}
+     Bcrypt version {{version}}. Good password hashing for your software and your servers.
+     {{description_src}}

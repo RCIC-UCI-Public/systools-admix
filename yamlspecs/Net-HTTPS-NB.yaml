@@ -2,5 +2,5 @@
 ---
 - package: perl-Net-HTTPS-NB
   name: Net-HTTPS-NB
-  version: "0.15"
+  version: "{{versions.Net_HTTPS_NB}}"
   cpanurl:  https://cpan.metacpan.org/authors/id/O/OL/OLEG

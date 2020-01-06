@@ -2,5 +2,5 @@
 ---
 - package: perl-Test-TCP
   name: Test-TCP
-  version: "2.20"
+  version: "{{versions.Test_TCP}}"
   cpanurl: https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA
