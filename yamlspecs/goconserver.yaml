@@ -1,6 +1,7 @@
 - package: goconserver 
   name: goconserver
   pkgname: "{{name}}"
+  versions: !include versions.yaml
   version: "{{versions.goconserver}}"
   extension: tar.gz
   vendor_source: https://github.com/xcat2/goconserver/archive/v{{version}}.tar.gz
@@ -11,6 +12,8 @@
   src_tarball: "{{name}}-{{version}}.{{extension}}"
   root: "/usr/bin"
   build:
+    modules:
+      - go/{{versions.go}}
     configure: echo configure not used 
     pkgmake: PATH=/opt/go/bin/:$$PATH GO111MODULE=on make
     target:  

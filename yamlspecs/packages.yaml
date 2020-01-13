@@ -60,8 +60,6 @@ build:
    - singularity-module
    - ansible-lint
    - cryptography
-   - enum34
-   - cffi
    - ruamel-yaml-clib
    - ruamel-yaml
    - ruamel-ordereddict
