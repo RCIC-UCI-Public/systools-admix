@@ -1,5 +1,5 @@
 ---
-go: "1.13.5"
+go: "1.13"
 goconserver: "0.3.2"
 ansible_lint:  "4.1.0"
 ansible: "2.8.5"
