@@ -2,11 +2,11 @@
 ---
 - package: ruamel-yaml 
   name: ruamel.yaml 
+  pkgname: python-{{package}}
   version: "{{versions.ruamel_yaml}}"
   extension: tar.xz
   vendor_source: https://bitbucket.org/ruamel/yaml/downloads/ruamel.yaml-{{version}}.{{extension}}
+  root: "{{pkg_defaults.python_pkgs_compat}}"
   description: |
      {{name}} {{version}} is a YAML 1.2 loader/dumper package for Python. 
      source code: {{vendor_source}}
-  files:
-     - /usr/lib/python*/site-packages/*

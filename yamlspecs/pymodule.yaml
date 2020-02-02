@@ -4,7 +4,7 @@
   name: pymodule_skel
   versions: !include versions.yaml
   version: 
-  vendor_source:  https://github.com/pyca/pynacl/archive/{{version}}.{{extension}}
+  vendor_source: ""
   description_src: Source code {{vendor_source}}
   pkgname: "python-{{name}}"
   root: "{{pkg_defaults.python_pkgs}}"

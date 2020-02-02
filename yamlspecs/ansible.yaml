@@ -12,6 +12,7 @@
      a language that approaches plain English, using SSH, with no agents to install on remote systems. 
      https://docs.ansible.com/ansible/ https://www.ansible.com/
      source code: {{vendor_source}}
+  root: "{{pkg_defaults.python_pkgs_compat}}"
   requires:
      - python-bcrypt
      - python-paramiko
@@ -19,5 +20,5 @@
      - python-jinja2
      - PyYAML
   files:
-     - /usr/lib/python2.7/site-packages/*
+     - "{{root}}/*"
      - /usr/bin/*
