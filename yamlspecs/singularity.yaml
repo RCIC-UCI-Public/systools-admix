@@ -11,7 +11,7 @@
     configure: ./mconfig 
     configure_args: --prefix={{root}}
     target: -C builddir 
-    modules: go
+    modules: go/{{versions.go}}
   install:
     makeinstall: make DESTDIR=$(ROOT) -C builddir install
     installextra: $(INSTALL) -m 644  README* COPYRIGHT $(ROOT){{root}}

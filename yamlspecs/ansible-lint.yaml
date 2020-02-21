@@ -10,9 +10,9 @@
   root: "{{pkg_defaults.python_pkgs_compat}}"
   requires:
      - ansible
-     - python-ruamel.yaml
-     - python-ruamel.yaml.clib
-     - python-ruamel.ordereddict
+     - python-ruamel-yaml
+     - python-ruamel-yaml-clib
+     - python-ruamel-ordereddict
      - python-cryptography
      - python-enum34
      - python-cffi
