@@ -1,0 +1,12 @@
+!include perlmodule.yaml
+---
+- package: Unicode::Map Perl module 
+  name: Unicode-Map
+  version: "{{versions.Unicode_Map}}"
+  cpanurl: https://cpan.metacpan.org/authors/id/M/MS/MSCHWARTZ
+  description: |
+    Unicode::Map perl module. An utility to map texts from and to unicode
+  files:
+    - "{{root}}/bin/*"
+    - "{{root}}/man/*"
+    - "{{root}}/lib/perl5/*"

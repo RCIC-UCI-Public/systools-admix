@@ -1,0 +1,9 @@
+!include perlmodule.yaml
+---
+- package: Parse::RecDescent Perl module 
+  name: Parse-RecDescent
+  version: "1.967015"
+  version: "{{versions.Parse_RecDescent}}"
+  cpanurl: https://cpan.metacpan.org/authors/id/J/JT/JTBRAUN
+  description: |
+    Parse::RecDescent perl module. Generate Recursive-Descent Parsers

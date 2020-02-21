@@ -1,0 +1,12 @@
+!include perlmodule.yaml
+---
+- package: Spreadsheet::WriteExcel Perl module 
+  name: Spreadsheet-WriteExcel
+  version: "{{versions.Spreadsheet_WriteExcel}}"
+  cpanurl: https://cpan.metacpan.org/authors/id/J/JM/JMCNAMARA
+  description: |
+    Spreadsheet::WriteExcel perl module. Write to a cross platform Excel binary file
+  files:
+    - "{{root}}/bin/*"
+    - "{{root}}/man/*"
+    - "{{root}}/lib/perl5/*"

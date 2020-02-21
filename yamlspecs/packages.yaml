@@ -63,5 +63,10 @@ build:
    - ruamel-yaml-clib
    - ruamel-yaml
    - ruamel-ordereddict
+   - OLE-Storage_Lite
+   - Parse-RecDescent
+   - Unicode-Map
+   - Jcode
+   - Spreadsheet-WriteExcel
 manifest:
    - "{{build}}"
