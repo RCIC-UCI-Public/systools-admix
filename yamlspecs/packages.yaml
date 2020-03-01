@@ -2,6 +2,7 @@ system:
    - perl-JSON
    - perl-DBI
    - perl-Module-Build
+   - perl-Sys-Syslog
    - gnu-efi-devel
    - nasm
    - syslinux-devel
