@@ -1,0 +1,14 @@
+!include pymodule.yaml
+---
+- package: pathlib2
+  name: pathlib2
+  pkgname: python-{{package}}
+  version: "{{versions.pathlib2}}"
+#  vendor_source:  https://files.pythonhosted.org/packages/94/d8/65c86584e7e97ef824a1845c72bbe95d79f5b306364fa778a3c3e401b309/pathlib2-2.3.5.tar.gz
+  vendor_source: https://github.com/mcmtroffaes/pathlib2/archive/{{version}}.{{extension}}
+  root: "{{pkg_defaults.python_pkgs_compat}}"
+  description: |
+     {{name}} {{version}} Object-oriented filesystem paths
+     source code: {{vendor_source}}
+  requires:
+    - python-six

@@ -1,0 +1,10 @@
+!include pymodule.yaml
+---
+- package: scandir
+  name: scandir
+  pkgname: python-{{package}}
+  version: "{{versions.scandir}}"
+  vendor_source: https://github.com/benhoyt/scandir/archive/v{{version}}.{{extension}}
+  description: |
+     {{name}} {{version}} scandir, a better directory iterator and faster os.walk()
+     source code: {{vendor_source}}
