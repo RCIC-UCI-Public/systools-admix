@@ -7,6 +7,6 @@
   description: |
     Unicode::Map perl module. An utility to map texts from and to unicode
   files:
-    - "{{root}}/bin/*"
-    - "{{root}}/man/*"
-    - "{{root}}/lib/perl5/*"
+    - "{{root}}/bin"
+    - "{{root}}/man"
+    - "{{root}}/lib/perl5"

@@ -8,7 +8,7 @@
   vendor_source: https://github.com/xcat2/xcat-dep/raw/master/xnba/xnba-{{version}}.{{extension}}
   description: |
      xCAT network boot agent version {{version}}
-  pkgname: "xnba-undi"
+  baserpm: "xnba-undi"
   root: "/tftpboot/xcat"
   build:
     patchfile: "{{name}}-{{version}}.patch"
@@ -20,4 +20,4 @@
        $(INSTALL) src/bin/undionly.kkpxe $(ROOT)/{{root}}/xnba.kpxe;
        $(INSTALL) src/bin-x86_64-efi/snponly.efi $(ROOT){{root}}/xnba.efi
   files:
-    - "{{root}}/*"
+    - "{{root}}"

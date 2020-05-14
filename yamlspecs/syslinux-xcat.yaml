@@ -2,7 +2,7 @@
 ---
 - package: syslinux patched for xcat 
   name: syslinux
-  pkgname: "{{name}}-xcat"
+  baserpm: "{{name}}-xcat"
   versions: !include versions.yaml
   version: "{{versions.syslinux_xcat}}"
   extension: tar.bz2
@@ -23,4 +23,4 @@
   install:
     makeinstall: $(INSTALL) {{build.dir}}/{{root}}/* $(ROOT){{root}} 
   files:
-    - "{{root}}/*" 
+    - "{{root}}" 

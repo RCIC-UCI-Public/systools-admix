@@ -5,5 +5,5 @@
   version: "{{versions.cryptography}}"
   vendor_source: https://files.pythonhosted.org/packages/be/60/da377e1bed002716fb2d5d1d1cab720f298cb33ecff7bf7adea72788e4e4/{{name}}-{{version}}.{{extension}}
   description: |
-     {{name}}  {{version}}.  Good password hashing for your software and your servers.
+     Cryptography {{version}} provides password hashing for your software and your servers.
      {{description_src}}

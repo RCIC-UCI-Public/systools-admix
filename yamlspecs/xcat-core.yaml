@@ -7,8 +7,7 @@
   vendor_source: https://github.com/xcat2/xcat-core/archive/{{version}}.tar.gz
   description: |
      xCAT is a toolkit for deployment and administration of clusters of all sizes.
-  pkgname: "{{name}}_{{version}}"
-  parent: "{{pkg_defaults.foundation}}/{{name}}/{{version}}"
+  parent: "{{pkg_defaults.foundation}}/{{name}}"
   build:
     preconfigure: >
       /bin/sed -i xCAT-genesis-builder/xCAT-genesis-base.spec -e "s/%%REPLACE_CURRENT_VERSION%%/{{version}}/"

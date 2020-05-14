@@ -64,6 +64,8 @@ build:
    - ruamel-yaml-clib
    - ruamel-yaml
    - ruamel-ordereddict
+   - ruamel-scandir
+   - pathlib2
    - OLE-Storage_Lite
    - Parse-RecDescent
    - Unicode-Map

@@ -5,7 +5,7 @@
   versions: !include versions.yaml
   version: "{{versions.ipmitool_xcat}}"
   vendor_source: https://github.com/ipmitool/ipmitool/releases/download/IPMITOOL_1_8_18/ipmitool-{{version}}.tar.gz 
-  pkgname: "{{name}}"
+  baserpm: "{{name}}"
   src_tarball: ipmitool-{{version}}.{{extension}}
   src_dir: ipmitool-{{version}}
   description: | 
@@ -21,7 +21,7 @@
      It provides commands for reading the Sensor Data Repository (SDR) and
      displaying sensor values, displaying the contents of the System Event
      Log (SEL), printing Field Replaceable Unit (FRU) information, reading and
-     setting LAN configuration, and chassis power control.
+     setting LAN configuration, and chassis power control
   root: /opt/xcat/bin
   build:
     configure:  CFLAGS='-Wno-unused-parameter' ./configure
@@ -31,4 +31,4 @@
   install:
     makeinstall: $(INSTALL) -m755 src/ipmitool $(ROOT){{root}}/ipmitool-xcat
   files:
-    - "{{root}}/*" 
+    - "{{root}}" 

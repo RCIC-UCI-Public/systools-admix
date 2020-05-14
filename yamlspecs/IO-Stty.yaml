@@ -1,10 +1,14 @@
-!include perlbuild.yaml
+!include perlmodule.yaml
 ---
 - package: perl-IO-Stty
   name: IO-Stty
   version: "{{versions.IO_Stty}}"
   cpanurl: https://cpan.metacpan.org/authors/id/T/TO/TODDR
+  build:
+    <<: *BuildPL
+  install:
+    <<: *InstallBuildPL
   files:
-    - "{{root}}/bin/*"
-    - "{{root}}/man/man3/*"
-    - "{{root}}/lib/perl5/*"
+    - "{{root}}/bin"
+    - "{{root}}/man"
+    - "{{root}}/lib/perl5"

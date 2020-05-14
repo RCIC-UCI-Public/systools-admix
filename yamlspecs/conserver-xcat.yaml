@@ -5,7 +5,7 @@
   versions: !include versions.yaml
   version: "{{versions.conserver_xcat}}"
   vendor_source: https://github.com/conserver/conserver/releases/download/v{{version}}/conserver-{{version}}.tar.gz
-  pkgname: "{{name}}"
+  baserpm: "{{name}}"
   src_tarball: "{{src_dir}}.{{extension}}"
   src_dir: conserver-{{version}}
   description: >
@@ -15,13 +15,7 @@
     configure_args: --with-openssl  --with-master=console
     target: 
   files:
-    - "{{root}}/bin/*" 
-    - "{{root}}/sbin/*" 
-    - "{{root}}/lib/*" 
-    - "{{root}}/share/man/man1/*" 
-    - "{{root}}/share/man/man5/*" 
-    - "{{root}}/share/man/man8/*" 
-    - "{{root}}/share/examples/*" 
+    - "{{root}}"
   provides:
     - conserver
     - conserver-client

@@ -3,7 +3,7 @@
 - package: ansible 
   name: ansible 
   version: "{{versions.ansible}}"
-  pkgname: "{{name}}"
+  baserpm: "{{name}}"
   vendor_source:  https://github.com/ansible/ansible/archive/v{{version}}.{{extension}}
   description: |
      ansible {{version}}. 
@@ -20,5 +20,5 @@
      - python-jinja2
      - PyYAML
   files:
-     - "{{root}}/*"
+     - "{{root}}"
      - /usr/bin/*

@@ -1,15 +1,14 @@
+!include rcic-package.yaml
 - package: goconserver 
   name: goconserver
-  pkgname: "{{name}}"
+  baserpm: "{{name}}"
   versions: !include versions.yaml
   version: "{{versions.goconserver}}"
-  extension: tar.gz
   vendor_source: https://github.com/xcat2/goconserver/archive/v{{version}}.tar.gz
   description: |
-    goconserver is written in golang which intend to replace the conserver which used in xcat2. 
-    The microservice based design makes it easy to integrate with other tool which hope to log the terminal sessions. 
-
-  src_tarball: "{{name}}-{{version}}.{{extension}}"
+    Goconserver is written in golang which intend to replace the conserver 
+    which used in xcat2. The microservice based design makes it easy to 
+    integrate with other tool which hope to log the terminal sessions. 
   root: "/usr/bin"
   build:
     modules:
@@ -24,7 +23,6 @@
        chmod 700 $(ROOT)/etc/goconserver $(ROOT)/var/log/goconserver/nodes $(ROOT)/var/lib/goconserver;
        $(INSTALL) etc/goconserver/server.conf $(ROOT)/etc/goconserver/; 
        $(INSTALL) etc/goconserver/client.sh   $(ROOT)/etc/profile.d/congo.sh
-
   files:
     - "{{root}}/*"
     - /etc/goconserver

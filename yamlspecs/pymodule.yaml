@@ -6,7 +6,7 @@
   version: 
   vendor_source: ""
   description_src: Source code {{vendor_source}}
-  pkgname: "python-{{name}}"
+  baserpm: "python-{{name}}"
   root: "{{pkg_defaults.python_pkgs}}"
   build:
     configure: echo No configure required
@@ -15,4 +15,4 @@
   install:
     makeinstall: python ./setup.py install --root=$(ROOT) 
   files: 
-    - "{{root}}/*"
+    - "{{root}}"
