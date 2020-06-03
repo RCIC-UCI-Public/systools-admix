@@ -9,6 +9,6 @@
   install:
     <<: *InstallBuildPL
   files:
-    - "{{root}}/bin"
-    - "{{root}}/man"
-    - "{{root}}/lib/perl5"
+    - "{{root}}/bin/*"
+    - "{{root}}/man/*"
+    - "{{root}}/lib/perl5/*"

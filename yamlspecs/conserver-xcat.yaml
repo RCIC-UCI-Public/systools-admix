@@ -15,7 +15,11 @@
     configure_args: --with-openssl  --with-master=console
     target: 
   files:
-    - "{{root}}"
+    - "{{root}}/bin/*"
+    - "{{root}}/sbin/*"
+    - "{{root}}/lib/*"
+    - "{{root}}/share/examples/*"
+    - "{{root}}/share/man/man*/*"
   provides:
     - conserver
     - conserver-client
