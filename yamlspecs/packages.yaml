@@ -3,6 +3,7 @@ system:
    - perl-DBI
    - perl-Module-Build
    - perl-Sys-Syslog
+   - perl-ExtUtils-MakeMaker
    - gnu-efi-devel
    - nasm
    - syslinux-devel
@@ -64,7 +65,7 @@ build:
    - ruamel-yaml-clib
    - ruamel-yaml
    - ruamel-ordereddict
-   - ruamel-scandir
+   - scandir
    - pathlib2
    - OLE-Storage_Lite
    - Parse-RecDescent
