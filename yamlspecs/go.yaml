@@ -1,4 +1,5 @@
 !include rcic-package.yaml
+!include rpm.yaml
 ---
 - package: go 
   name: go 
@@ -18,6 +19,4 @@
     makeinstall: 
        zcat {{src_tarball}} | (cd $(ROOT)/{{root}}; $(TAR) xf -  --strip 1)
   rpm:
-    extras: >
-      AutoReqProv:no\n
-      %define __spec_install_post %{nil}\n
+    extras: *RpmNone
