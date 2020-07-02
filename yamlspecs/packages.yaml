@@ -28,6 +28,7 @@ system:
    - openssl-devel
    - libuuid-devel
    - cryptsetup
+   - ncurses-devel
 bootstrap:
    - Test-SharedFork
    - Test-TCP
@@ -72,5 +73,6 @@ build:
    - Unicode-Map
    - Jcode
    - Spreadsheet-WriteExcel
+   - nmon
 manifest:
    - "{{build}}"
