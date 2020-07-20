@@ -1,0 +1,29 @@
+!include rcic-package.yaml
+---
+- package: slurm-utils
+  name: slurm-utils 
+  pkgname: "{{name}}"
+  root: /usr/bin
+  version: "0.1"
+  vendor_source:  https://github.oit.uci.edu/RCIC-UCI/slurm-utils
+  description: |
+     Slurm-utils {{version}}. A collection of utilities to simplify slurm management
+     and interrogation
+
+  no_src_tar: True
+  no_src_dir: True
+
+  scripts: cwho whoc qSummary sdrain sresume
+  build:
+    configure: echo no configure required
+    pkgmake: >
+       git clone {{vendor_source}};
+       cd {{name}};
+       git checkout tags/{{version}}  -b {{version}}
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT)/{{root}};
+      for x in {{scripts}}; do install -m 755 {{name}}/$$x $(ROOT)/{{root}}; done
+
+  files:
+    - "{{root}}/*"
