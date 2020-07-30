@@ -5,7 +5,7 @@
   pkgname: "{{name}}"
   root: /usr/bin
   version: "0.1"
-  vendor_source:  https://github.oit.uci.edu/RCIC-UCI/slurm-utils
+  vendor_source:  https://github.oit.uci.edu/RCIC-UCI/slurm-utils/archive/{{version}}.{{extension}}
   description: |
      Slurm-utils {{version}}. A collection of utilities to simplify slurm management
      and interrogation
