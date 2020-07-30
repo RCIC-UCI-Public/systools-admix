@@ -1,0 +1,13 @@
+!include pymodule.yaml
+---
+- package: collectd
+  root: "{{pkg_defaults.python_base_compat}}"
+  name: collectd
+  version: "{{versions.collectd}}"
+  vendor_source:  https://github.com/downloads/appliedsec/{{name}}/{{name}}-{{version}}.{{extension}}
+  description: |
+     Collectd {{version}} Python module implements the binary protocol used by the collectd 
+     Network plugin to let you send arbitrary numeric data to collectd servers. 
+     Other than turning on the Network plugin on the destination collectd server, 
+     no configuration is needed.
+     {{description_src}}

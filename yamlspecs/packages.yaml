@@ -74,5 +74,6 @@ build:
    - Jcode
    - Spreadsheet-WriteExcel
    - nmon
+   - collectd
 manifest:
    - "{{build}}"
