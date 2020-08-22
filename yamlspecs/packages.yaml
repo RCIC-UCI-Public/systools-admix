@@ -29,6 +29,7 @@ system:
    - libuuid-devel
    - cryptsetup
    - ncurses-devel
+   - lvm2
 bootstrap:
    - Test-SharedFork
    - Test-TCP
