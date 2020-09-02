@@ -4,6 +4,7 @@
 ---
 - package: Go Module
   category: LANGUAGES
+  release: 2
   module:
     prepend_path:
       - PATH {{root}}/bin
