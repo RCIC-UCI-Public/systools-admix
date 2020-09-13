@@ -76,5 +76,6 @@ build:
    - Spreadsheet-WriteExcel
    - nmon
    - collectd
+   - hostlist
 manifest:
    - "{{build}}"
