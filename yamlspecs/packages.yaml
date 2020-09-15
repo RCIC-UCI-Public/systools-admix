@@ -77,5 +77,6 @@ build:
    - nmon
    - collectd
    - hostlist
+   - zfs-auto-snapshot
 manifest:
    - "{{build}}"

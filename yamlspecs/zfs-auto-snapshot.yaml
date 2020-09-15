@@ -1,0 +1,33 @@
+!include rcic-package.yaml
+---
+- package: zfs-auto-snapshot
+  name: zfs-auto-snapshot 
+  pkgname: "{{name}}"
+  root: /
+  versions: !include versions.yaml
+  version: "{{versions.zfs_auto_snapshot}}"
+  vendor_source:  https://github.com/zfsonlinux/{{name}}/archive/upstream/{{version}}.{{extension}}
+  description: |
+     ZFS auto snapshot {{version}}. 
+     An alternative implementation of the zfs-auto-snapshot service for Linux
+     that is compatible with zfs-linux and zfs-fuse.
+
+     Automatically create, rotate, and destroy periodic ZFS snapshots. This is
+     the utility that creates the @zfs-auto-snap_frequent, @zfs-auto-snap_hourly,
+     @zfs-auto-snap_daily, @zfs-auto-snap_weekly, and @zfs-auto-snap_monthly
+     snapshots if it is installed.
+  src_dir: "{{name}}-upstream-{{version}}"
+  build:
+    configure: echo no configure 
+    pkgmake: echo install only
+  install:
+    makeinstall: >
+      make -e PREFIX="{{root}}" DESTDIR=$(ROOT) install;
+      mkdir $(ROOT){{root}}/usr; mv $(ROOT){{root}}/share $(ROOT){{root}}/usr;
+      mkdir -p $(ROOT){{root}}/usr/share/{{name}}/examples; mv $(ROOT){{root}}/etc/cron* $(ROOT){{root}}/usr/share/{{name}}/examples
+  files:
+    - /sbin/*
+    - /usr/share/man/man8/*
+    - /usr/share/{{name}}
+
+    
