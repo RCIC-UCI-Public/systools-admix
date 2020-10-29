@@ -62,6 +62,7 @@ build:
    - pynacl
    - singularity
    - singularity-module
+   - cffi
    - ansible-lint
    - cryptography
    - ruamel-yaml-clib

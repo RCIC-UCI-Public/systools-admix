@@ -1,0 +1,14 @@
+!include pymodule.yaml
+---
+- package: cffi 
+  name: cffi 
+  version: "{{versions.cffi}}"
+  vendor_source: https://files.pythonhosted.org/packages/05/54/3324b0c46340c31b909fcec598696aaec7ddc8c18a63f2db352562d3354c/{{name}}-{{version}}.{{extension}}
+  description: |
+     Foreign Function Interface for Python calling C code, {{name}} {{version}}.
+     Please see the Documentation at http://cffi.readthedocs.org.
+     Source code {{vendor_source}}
+  
+#  files:
+#     - "{{root}}"
+#     - /usr/bin/*
