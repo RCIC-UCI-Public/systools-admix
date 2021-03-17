@@ -1,0 +1,7 @@
+# Builds the module for singularity. 
+!include singularity-latest.yaml
+!include rcic-module.yaml
+---
+- package: Singularity Module
+  category: TOOLS
+  release: 2

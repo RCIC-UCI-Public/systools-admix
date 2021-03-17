@@ -1,0 +1,5 @@
+!include singularity.yaml
+---
+- package: Singularity Container Runtime 
+  version: "{{versions.singularity_latest}}"
+  vendor_source: https://github.com/hpcng/singularity/archive/v{{version}}.tar.gz 

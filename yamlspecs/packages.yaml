@@ -62,6 +62,8 @@ build:
    - pynacl
    - singularity
    - singularity-module
+   - singularity-latest
+   - singularity-module-latest
    - cffi
    - ansible-lint
    - cryptography
