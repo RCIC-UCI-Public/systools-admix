@@ -1,0 +1,27 @@
+!include rcic-package.yaml
+---
+- package: Rclone 
+  name: rclone 
+  pkgname: "{{name}}"
+  release: 2
+  versions: !include versions.yaml
+  version: "{{versions.rclone}}"
+  vendor_source: https://github.com/{{name}}/{{name}}/archive/v{{version}}.{{extension}}
+  root: /usr
+  description: | 
+     Rclone {{version}}. Rclone (rsync for cloud storage) is a 
+     command line program to sync files and directories to and from 
+     different cloud storage providers.
+  build:
+    configure: echo no configure required
+    modules: go/{{versions.go}}
+    pkgmake: go build
+  install:
+    makeinstall: >
+       mkdir -p $(ROOT){{root}}/bin; 
+       mkdir -p $(ROOT){{root}}/share/man/man1;
+       install -m 755 rclone $(ROOT){{root}}/bin;
+       install -m 644 rclone.1 $(ROOT){{root}}/share/man/man1
+  files:
+    - "{{root}}/bin/*"
+    - "{{root}}/share/man/man1/*"

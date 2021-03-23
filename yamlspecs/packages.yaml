@@ -81,5 +81,6 @@ build:
    - collectd
    - hostlist
    - zfs-auto-snapshot
+   - rclone
 manifest:
    - "{{build}}"
