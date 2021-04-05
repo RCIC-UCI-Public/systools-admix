@@ -38,6 +38,7 @@ bootstrap:
    - IO-Select
    - go
    - go-module
+   - ansible
 build:
    - conserver-xcat
    - Crypt-Rijndael
