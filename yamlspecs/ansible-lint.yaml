@@ -8,11 +8,12 @@
      {{name}} {{version}}. Ansible-lint checks playbooks for practices and behaviour
      that could potentially be improved. {{description_src}}
   root: "{{pkg_defaults.python_pkgs_compat}}"
+  build:
+    pkgmake: sed -i "s/_scm>=/_scm==/" setup.cfg; python ./setup.py  
   requires:
      - ansible
      - python-ruamel-yaml
      - python-ruamel-yaml-clib
-     - python-ruamel-ordereddict
      - python-cryptography
      - python-enum34
      - python-cffi
