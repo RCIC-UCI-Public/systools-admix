@@ -38,39 +38,30 @@ bootstrap:
    - IO-Select
    - go
    - go-module
+   - bcrypt
+   - pynacl
    - ansible
+   - cffi
+   - cryptography
+   - ruamel-yaml-clib
+   - ruamel-yaml
 build:
    - conserver-xcat
    - Crypt-Rijndael
    - Expect
    - goconserver
-   - go
-   - go-module
    - HTML-Form
-   - HTTP-Async
-   - HTTP-Server-Simple
-   - IO-Select
    - IO-Stty
    - ipmitool-xcat
    - Net-HTTPS-NB
    - syslinux-xcat
-   - Test-SharedFork
-   - Test-TCP
    - xcat-core
    - xnba-undi
-   - ansible
-   - bcrypt
-   - pynacl
    - singularity
    - singularity-module
    - singularity-latest
    - singularity-module-latest
-   - cffi
    - ansible-lint
-   - cryptography
-   - ruamel-yaml-clib
-   - ruamel-yaml
-   - ruamel-ordereddict
    - scandir
    - pathlib2
    - OLE-Storage_Lite
@@ -84,4 +75,5 @@ build:
    - zfs-auto-snapshot
    - rclone
 manifest:
+   - "{{bootstrap}}"
    - "{{build}}"
