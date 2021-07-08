@@ -1,4 +1,5 @@
 !include rcic-package.yaml
+!include rpm.yaml
 ---
 - package: Singularity Container Runtime 
   name: singularity 
@@ -15,6 +16,5 @@
   install:
     makeinstall: make DESTDIR=$(ROOT) -C builddir install
     installextra: $(INSTALL) -m 644  README* COPYRIGHT $(ROOT){{root}}
-  rpm: !include rpm.extras.yaml
   requires:
     - squashfs-tools  
