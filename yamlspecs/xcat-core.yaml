@@ -12,11 +12,9 @@
     preconfigure: >
       /bin/sed -i xCAT-genesis-builder/xCAT-genesis-base.spec -e "s/%%REPLACE_CURRENT_VERSION%%/{{version}}/"
     patchfile: "{{name}}-{{version}}.patch"
-    configure: echo no configure required
     pkgmake: >
      cd xCAT-genesis-builder; rpm --showrc > /tmp/rpm-env; REDHAT_BASE=$(REDHAT.ROOT) ./buildrpm; cd ..;  
      ./buildcore.sh DEST=$(PWD) 
-    target: 
   install:
     makeinstall: $(INSTALL)  Release Version README.rst $(ROOT)/{{root}}
     installextra: > 

@@ -1,15 +1,13 @@
 !include rcic-package.yaml
+!include rpm.yaml
 ---
-- package: pymodule 
+- package: pymodule  template
   name: pymodule_skel
   versions: !include versions.yaml
-  version: 
-  vendor_source: ""
   description_src: Source code {{vendor_source}}
   baserpm: "python-{{name}}"
   root: "{{pkg_defaults.python_pkgs}}"
   build:
-    configure: echo No configure required
     pkgmake: python ./setup.py  
     target: build
   install:

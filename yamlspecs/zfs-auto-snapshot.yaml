@@ -17,9 +17,6 @@
      @zfs-auto-snap_daily, @zfs-auto-snap_weekly, and @zfs-auto-snap_monthly
      snapshots if it is installed.
   src_dir: "{{name}}-upstream-{{version}}"
-  build:
-    configure: echo no configure 
-    pkgmake: echo install only
   install:
     makeinstall: >
       make -e PREFIX="{{root}}" DESTDIR=$(ROOT) install;

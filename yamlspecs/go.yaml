@@ -11,10 +11,6 @@
     makes it easy to build simple, reliable, and efficient software
   src_tarball: "{{name}}{{version}}.linux-amd64.{{extension}}"
   no_src_dir: True
-  build:
-    configure: echo configure not used 
-    pkgmake: echo static binary download  
-    target:  
   install:
     makeinstall: 
        zcat {{src_tarball}} | (cd $(ROOT)/{{root}}; $(TAR) xf -  --strip 1)
