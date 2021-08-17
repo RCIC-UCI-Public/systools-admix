@@ -30,6 +30,8 @@ system:
    - cryptsetup
    - ncurses-devel
    - lvm2
+   - python-ruamel-yaml-clib
+   - python-ruamel-yaml
 bootstrap:
    - Test-SharedFork
    - Test-TCP
@@ -43,8 +45,6 @@ bootstrap:
    - ansible
    - cffi
    - cryptography
-   - ruamel-yaml-clib
-   - ruamel-yaml
 build:
    - conserver-xcat
    - Crypt-Rijndael
