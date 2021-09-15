@@ -59,8 +59,6 @@ build:
    - xnba-undi
    - singularity
    - singularity-module
-   - singularity-latest
-   - singularity-module-latest
    - ansible-lint
    - scandir
    - pathlib2
@@ -77,3 +75,5 @@ build:
 manifest:
    - "{{bootstrap}}"
    - "{{build}}"
+sets:
+   - latest
