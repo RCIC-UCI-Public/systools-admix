@@ -49,7 +49,7 @@ build:
    - conserver-xcat
    - Crypt-Rijndael
    - Expect
-   - goconserver
+#   - goconserver
    - HTML-Form
    - IO-Stty
    - ipmitool-xcat

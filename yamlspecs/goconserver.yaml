@@ -13,7 +13,6 @@
   build:
     modules:
       - go/{{versions.go}}
-    configure: echo configure not used 
     pkgmake: PATH=/opt/go/bin/:$$PATH GO111MODULE=on make
   install:
     makeinstall: >

@@ -12,6 +12,7 @@
     Serial Console Server {{version}}
   root: /usr
   build:
+    configure: ./configure
     configure_args: --with-openssl  --with-master=console
   files:
     - "{{root}}/bin/*"
