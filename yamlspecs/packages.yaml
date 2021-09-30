@@ -43,8 +43,6 @@ bootstrap:
    - ansible
    - cffi
    - cryptography
-   - ruamel-yaml-clib
-   - ruamel-yaml
 build:
    - conserver-xcat
    - Crypt-Rijndael
