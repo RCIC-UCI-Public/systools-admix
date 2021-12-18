@@ -1,3 +1,4 @@
+site: !include site.yaml
 system:
    - perl-JSON
    - perl-DBI
@@ -6,30 +7,33 @@ system:
    - perl-ExtUtils-MakeMaker
    - gnu-efi-devel
    - nasm
-   - syslinux-devel
    - binutils-devel
    - net-tools
    - mstflint
-   - bridge-utils
    - mdadm
    - dosfstools
-   - ntp
    - nfs-utils
    - usbutils
-   - screen
    - ipmitool
    - lldpad
-   - ntp-perl
    - bind-utils
    - nmap-ncat
-   - python-devel
-   - python-setuptools
    - libffi-devel
    - openssl-devel
    - libuuid-devel
    - cryptsetup
    - ncurses-devel
    - lvm2
+   - !ifeq "{{site.os_release}},7,{{system7}},"
+system7:
+   - syslinux-devel
+   - bridge-utils
+   - ntp
+   - screen
+   - ntp-perl
+   - python-devel
+   - python-setuptools
+
 bootstrap:
    - Test-SharedFork
    - Test-TCP
@@ -40,9 +44,10 @@ bootstrap:
    - go-module
    - bcrypt
    - pynacl
+   - !ifeq "{{site.os_release}},8,paramiko,"
+   - !ifeq "{{site.os_release}},7,cryptography,"
    - ansible
    - cffi
-   - cryptography
 build:
    - conserver-xcat
    - Crypt-Rijndael
