@@ -5,7 +5,7 @@
   version: "{{versions.ansible}}"
   os_release: "{{pkg_defaults.site.os_release}}"
   baserpm: "{{name}}"
-  vendor_source:  https://github.com/ansible/ansible/archive/v{{version}}.{{extension}}
+  vendor_source:  https://files.pythonhosted.org/packages/ba/22/7b58a8ba8e43159dc5cb32d97dd50e2b70b016585dbb188e9f2b61dac1e2/{{name}}-{{version}}.{{extension}}
   description: |
      ansible {{version}}. 
      Ansible is a radically simple IT automation platform that makes your applications and systems easier 
@@ -24,4 +24,3 @@
      - "{{pyyaml}}" 
   files:
      - "{{root}}"
-     - /usr/bin/*

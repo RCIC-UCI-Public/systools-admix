@@ -7,20 +7,20 @@
   description: |
      {{name}} {{version}}. Ansible-lint checks playbooks for practices and behaviour
      that could potentially be improved. {{description_src}}
-  root: "{{pkg_defaults.python_pkgs_compat}}"
+  root: "{{purepyroot}}"
   build:
     pkgmake: sed -i "s/_scm>=/_scm==/" setup.cfg; python ./setup.py  
   requires:
-     - ansible
+     - ansible-base
      - python-ruamel-yaml
      - python-ruamel-yaml-clib
-     - python-cryptography
-     - python-enum34
-     - python-cffi
-     - python-pycparser
-     - python-setuptools >= 40.6.0-1
-     - python-six
-     - python-ipaddress
+     - "{{pypkg}}-cryptography"
+     - "{{pypkg}}-enum34"
+     - "{{pypkg}}-cffi"
+     - "{{pypkg}}-pycparser"
+     - "{{pypkg}}-setuptools >= 40.6.0-1"
+     - "{{pypkg}}-six"
+     - !ifeq "{{pkg_defaults.site.os_release}},7,{{pypkg}}-ipaddress,"
   files:
      - "{{root}}"
      - /usr/bin/*
