@@ -13,4 +13,4 @@
   files:
    - /usr/bin/*
    - /usr/share/man/man1/*
-   - "{{pkg_defaults.python_pkgs_compat}}/*"
+   - "{{purepyroot}}/*"

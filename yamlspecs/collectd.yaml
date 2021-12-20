@@ -1,7 +1,7 @@
 !include pymodule.yaml
 ---
 - package: collectd
-  root: "{{pkg_defaults.python_base_compat}}"
+  root: "{{purepyroot}}"
   name: collectd
   version: "{{versions.collectd}}"
   vendor_source:  https://github.com/downloads/appliedsec/{{name}}/{{name}}-{{version}}.{{extension}}
