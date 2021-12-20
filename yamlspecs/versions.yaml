@@ -2,7 +2,7 @@
 go: "1.13"
 goconserver: "0.3.2"
 ansible_lint:  "4.1.0"
-ansible: "2.8.5"
+ansible: "2.10.7"
 bcrypt: "3.1.4"
 cffi: "1.14.0"
 conserver_xcat: "8.2.4"
