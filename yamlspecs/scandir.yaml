@@ -2,7 +2,6 @@
 ---
 - package: scandir
   name: scandir
-  baserpm: python-{{package}}
   version: "{{versions.scandir}}"
   vendor_source: https://github.com/benhoyt/scandir/archive/v{{version}}.{{extension}}
   description: |
