@@ -24,3 +24,4 @@
      - "{{pyyaml}}" 
   files:
      - "{{root}}"
+     - /usr/bin/*
