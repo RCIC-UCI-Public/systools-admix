@@ -40,8 +40,6 @@ bootstrap:
    - HTTP-Server-Simple
    - HTTP-Async
    - IO-Select
-   - go
-   - go-module
    - bcrypt
    - pynacl
    - !ifeq "{{site.os_release}},8,paramiko,"
