@@ -1,5 +1,5 @@
+!include site.yaml
 ---
-go: "1.13"
 goconserver: "0.3.2"
 ansible_lint:  "4.1.0"
 ansible: "2.10.7"
@@ -19,7 +19,6 @@ ipmitool_xcat: "1.8.18"
 Net_HTTPS_NB: "0.15"
 pynacl:  "1.2.1"
 singularity: "3.4.1"
-singularity_latest: "3.7.2"
 syslinux_xcat: "3.86"
 Test_SharedFork: "0.29"
 Test_TCP: "2.20"
