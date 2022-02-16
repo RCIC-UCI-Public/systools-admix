@@ -61,8 +61,6 @@ build:
    - HTML-Form
    - IO-Stty
    - Net-HTTPS-NB
-   - singularity
-   - singularity-module
    - ansible-lint
    - scandir
    - pathlib2
@@ -80,5 +78,3 @@ build:
 manifest:
    - "{{bootstrap}}"
    - "{{build}}"
-sets:
-   - latest

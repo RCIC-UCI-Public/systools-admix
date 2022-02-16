@@ -1,8 +1,0 @@
-!include singularity.yaml
-!include rcic-module.yaml
----
-- package: Singularity module
-  category: TOOLS
-  release: 2
-  module:
-    prereq:

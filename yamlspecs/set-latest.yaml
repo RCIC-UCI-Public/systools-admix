@@ -1,7 +1,0 @@
----
-versions: versions-latest.yaml
-build:
-  - singularity
-  - singularity-module
-manifest:
-  - "{{build}}"
