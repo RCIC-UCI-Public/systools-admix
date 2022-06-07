@@ -1,3 +1,4 @@
+site: !include site.yaml
 system:
    - perl-JSON
    - perl-DBI
@@ -6,61 +7,58 @@ system:
    - perl-ExtUtils-MakeMaker
    - gnu-efi-devel
    - nasm
-   - syslinux-devel
    - binutils-devel
    - net-tools
    - mstflint
-   - bridge-utils
    - mdadm
    - dosfstools
-   - ntp
    - nfs-utils
    - usbutils
-   - screen
    - ipmitool
    - lldpad
-   - ntp-perl
    - bind-utils
    - nmap-ncat
-   - python-devel
-   - python-setuptools
    - libffi-devel
    - openssl-devel
    - libuuid-devel
    - cryptsetup
    - ncurses-devel
    - lvm2
-   - python-ruamel-yaml-clib
-   - python-ruamel-yaml
+   - !ifeq "{{site.os_release}},7,{{system7}},"
+system7:
+   - syslinux-devel
+   - bridge-utils
+   - ntp
+   - screen
+   - ntp-perl
+   - python-devel
+   - python-setuptools
 bootstrap:
    - Test-SharedFork
    - Test-TCP
    - HTTP-Server-Simple
    - HTTP-Async
    - IO-Select
-   - go
-   - go-module
    - bcrypt
    - pynacl
+   - !ifeq "{{site.os_release}},8,paramiko,"
+   - !ifeq "{{site.os_release}},7,cryptography,"
    - ansible
    - cffi
-   - cryptography
-build:
+xcat:
    - conserver-xcat
-   - Crypt-Rijndael
-   - Expect
-   - goconserver
-   - HTML-Form
-   - IO-Stty
+#   - goconserver
    - ipmitool-xcat
-   - Net-HTTPS-NB
    - syslinux-xcat
    - xcat-core
    - xnba-undi
-   - singularity
-   - singularity-module
-   - singularity-latest
-   - singularity-module-latest
+   
+build:
+   - Crypt-Rijndael
+   - Expect
+   - HTML-Form
+   - IO-Stty
+   - Net-HTTPS-NB
    - ansible-lint
    - scandir
    - pathlib2
@@ -74,6 +72,7 @@ build:
    - hostlist
    - zfs-auto-snapshot
    - rclone
+   - !ifeq "{{site.os_release}},7,xcat,"
 manifest:
    - "{{bootstrap}}"
    - "{{build}}"

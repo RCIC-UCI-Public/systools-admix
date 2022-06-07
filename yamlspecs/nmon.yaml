@@ -14,10 +14,8 @@
   description: |
      Nmon {{version}}. 
   build:
-     configure: echo no configure
      pkgmake: cc -o {{name}} {{sourcefile}} -lm -lncurses
   install:
      makeinstall: install -m 755 {{name}} $(ROOT)/{{root}}
-
   files:
     - "{{root}}/*"

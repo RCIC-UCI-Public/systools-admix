@@ -13,7 +13,6 @@
      command line program to sync files and directories to and from 
      different cloud storage providers.
   build:
-    configure: echo no configure required
     modules: go/{{versions.go}}
     pkgmake: go build
   install:

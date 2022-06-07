@@ -27,7 +27,6 @@
     configure:  CFLAGS='-Wno-unused-parameter' ./configure
     configure_args: >
       --enable-file-security --disable-intf-free 
-    target: 
   install:
     makeinstall: $(INSTALL) -m755 src/ipmitool $(ROOT){{root}}/ipmitool-xcat
   files:

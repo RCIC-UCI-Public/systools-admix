@@ -22,7 +22,6 @@
        PERL_MM_OPT=INSTALL_BASE={{root}} INSTALLPRIVLIB={{perl5lib}} INSTALLARCHLIB={{perl5lib}} INSTALLSITELIB={{perl5lib}} perl {{build.style}}
     configure: echo used perl {{build.style}}
     pkgmake: make
-    target: 
   install: &BaseInstall
     makeinstall: PERL_INSTALL_ROOT=$(ROOT) make install
     installextra: > 

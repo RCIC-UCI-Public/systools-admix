@@ -13,9 +13,7 @@
   build:
     modules:
       - go/{{versions.go}}
-    configure: echo configure not used 
     pkgmake: PATH=/opt/go/bin/:$$PATH GO111MODULE=on make
-    target:  
   install:
     makeinstall: >
        $(INSTALL) -m550 goconserver congo $(ROOT){{root}} ;

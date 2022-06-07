@@ -5,7 +5,6 @@ c8dcde06810686db2c1494b59e3313ff010afc58  sources/ansible-2.8.5.tar.gz 15YFVnfnt
 1aa679abaa0e2e1f654a65f6ab1af254518e3407  sources/conserver-8.2.4.tar.gz 1Bw47A625Fxf0g6mHsvooOud8auQwH7Nn
 188befc691da6bbcab5fdd98ffc8594702008fbd  sources/Crypt-Rijndael-1.14.tar.gz 146gIHKptdyo2V-9x8vjNGR9DXS4P-_zB
 1ad32144f3e19acb7bcc16dd7c743c73bdda799d  sources/Expect-1.15.tar.gz 1lR0kaWPCY86ax5L3vuv-phg8qAGrL_FY
-e6db5c41c6d086335919ab6018b11cc1106e8c28  sources/go1.13.linux-amd64.tar.gz 1f8HWnwWhe0Ww5-L_rpC9SY7J-6x7NUC_
 61e5466873118c7ebcb3dc7f1a17b8dfc84be41b  sources/goconserver-0.3.2.tar.gz 1qPE-tqrGzgC3tb6mcDwG-i5Zga5efCJu
 9c48a77300e2cdd01c84151683119f455b7570e2  sources/HTML-Form-6.04.tar.gz 1-alY7Gh0VT5fNU1rXUROD2mNnbQCGNu8
 925302725c7dd0f96d30779451997752dd0807c0  sources/HTTP-Async-0.33.tar.gz 13PTMC2tp6Y_SfmQ7ay-RvmI1HEwaU7RA
@@ -23,7 +22,6 @@ bc77bc8837329d99df7d30ce059a332ebb622ddd  sources/Test-SharedFork-0.29.tar.gz 1W
 1d0a695235f46c759f90a0c5e4cd196027b63f1b  sources/Jcode-2.07.tar.gz 1Q3DJYqKDtUmJ3mm8OlhTTqowKrNFzy7p
 b567f84279d27e4788b0de3276eabd4d371a33be  sources/OLE-Storage_Lite-0.20.tar.gz 1pgrq_uHvos26pBdfGmwzj3ZLSm-0uWJV
 9021740cb78d97cccec0bdf9def34d1f82e62801  sources/Parse-RecDescent-1.967015.tar.gz 189YS2CZhB80B23kTt_bPx6nef6oDFLTT
-7c2eb977c44abc03d771a58f0093f9994c4cde73  sources/singularity-3.4.1.tar.gz 1HoehiBqN_8kYNDX-lzTNXIdl9AiUGfsL
 8dd613cd08326aea374b2e0457921c1243a43e0d  sources/Spreadsheet-WriteExcel-2.40.tar.gz 1E9IyDLp7Yp6hRUArJcQOhhJuf5x7Ht3o
 896bcbfe370b939b4c5fb5866df9059fbdc5b683  sources/Unicode-Map-0.112.tar.gz 1ylUdcUkYN4LYQEmvQk2R5FeDMSsUdvl7
 c48586118943adc8ca829b406c5697417b7a45b4  sources/scandir-1.10.0.tar.gz 1jOq0icWT8gyOqwFtqTMCdgkCReyTVap9
@@ -31,7 +29,8 @@ c48586118943adc8ca829b406c5697417b7a45b4  sources/scandir-1.10.0.tar.gz 1jOq0icW
 842aff3bc2d840f4a2869af5f8c15e6aedf4a386  sources/collectd-1.0.2.tar.gz 1sx_YeklX3wBdvYqCcgqfCzvF86ZJqz4v
 ade9a4ca3dce3203b7b1dc70ec9a5c25c4994689  sources/python-hostlist-1.20.tar.gz 1Q6x1ZjkFgfntHZs-EeLtsC3iKlil2asU
 2a8f05a7d51d77ef1e641cb359a54e4d8fa019cb  sources/cffi-1.14.0.tar.gz 1laUlB6oa8f0SEtofF8EaJSk8qAH4PTvx
-e0ded9b2efca4a84f233a1cdb9d44bde1cab405d  sources/singularity-3.7.2.tar.gz 1Nstvh6TPsKylPIX2OX6AUnSZcGeEu7yu
 833a81c1dfc74aa634aaafdfd78cc87bb894705f  sources/rclone-1.54.1.tar.gz 1ZQqH_NrxgHEnn7NO8M-3q5j6B0W76ELv
 a58d3e182784d8b295734a77bc48f559b7e8773b  sources/zfs-auto-snapshot-1.2.4.tar.gz 1tZi4ljxVR9tzHxJeeiBtfwHUc6sVsseV
 cd6c8b28d36cf7afed60618d46cfbb931983edcd  sources/zfs-replicate-1.1.14.tar.gz 1-6kBgSsXYGEIHCuGo6hr_PWZTND2NGM4
+cec3a1e04cb0d2ffeee0a9caf74d56e526f4ec68  sources/ansible-2.10.7.tar.gz 1sZhOA94cKEL3p75q2c_vPz6CG-i7yo6Q
+ffcd8e5a1eaf6e95c4b4cb3836953b996d4131cd  sources/ansible-base-2.10.7.tar.gz 1mpbUp0LO53xxzlZgAtOH-Joe6XWybFvo
