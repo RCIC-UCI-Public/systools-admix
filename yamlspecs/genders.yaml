@@ -6,6 +6,7 @@
   version: "{{versions.genders.version}}"
   version_dash: "{{versions.genders.dash}}"
   vendor_source: https://github.com/chaos/{{name}}/archive/refs/tags/{{name}}-{{version}}/pdsh-{{version_dash}}.{{extension}}
+  release: "2"
   pkgname: "{{name}}"
   src_dir: "{{name}}-{{name}}-{{version_dash}}"
   src_tarball: "{{name}}-{{version_dash}}.{{extension}}"

@@ -4,6 +4,7 @@
   name: pdsh 
   versions: !include versions.yaml
   version: "{{versions.pdsh}}"
+  release: "6"
   vendor_source: https://github.com/chaos/pdsh/releases/download/pdsh-{{version}}/pdsh-{{version}}.{{extension}}
   pkgname: "{{name}}"
   root: /usr
