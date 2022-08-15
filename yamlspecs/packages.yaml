@@ -45,6 +45,7 @@ bootstrap:
    - !ifeq "{{site.os_release}},7,cryptography,"
    - ansible
    - cffi
+   - genders
 xcat:
    - conserver-xcat
 #   - goconserver
@@ -72,6 +73,7 @@ build:
    - hostlist
    - zfs-auto-snapshot
    - rclone
+   - pdsh
    - !ifeq "{{site.os_release}},7,xcat,"
 manifest:
    - "{{bootstrap}}"

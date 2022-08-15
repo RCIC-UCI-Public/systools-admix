@@ -37,3 +37,7 @@ zfs_auto_snapshot: "1.2.4"
 rclone: "1.58.1"
 paramiko: "2.8.1"
 go: "1.17.7"
+pdsh: "2.34"
+genders:
+  version: "1.27.3"
+  dash: "1-27-3"
