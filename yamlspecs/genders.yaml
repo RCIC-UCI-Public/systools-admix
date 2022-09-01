@@ -1,0 +1,30 @@
+!include rcic-package.yaml 
+---
+- package: genders 
+  name: genders 
+  versions: !include versions.yaml
+  version: "{{versions.genders.version}}"
+  version_dash: "{{versions.genders.dash}}"
+  vendor_source: https://github.com/chaos/{{name}}/archive/refs/tags/{{name}}-{{version}}/pdsh-{{version_dash}}.{{extension}}
+  release: "2"
+  pkgname: "{{name}}"
+  src_dir: "{{name}}-{{name}}-{{version_dash}}"
+  src_tarball: "{{name}}-{{version_dash}}.{{extension}}"
+  root: /usr
+  description: |
+     genders {{version}} is a static cluster configuration database used for cluster configuration management.
+     It is used by a variety of tools and scripts for management of large clusters. The genders database is 
+     typically replicated on every node of the cluster. It describes the layout and configuration of the cluster 
+     so that tools and scripts can sense the variations of cluster nodes. By abstracting this information 
+     into a plain text file, it becomes possible to change the configuration of a cluster by modifying only one file 
+  build:
+     configure_args: --without-java-extensions --with-extension-destdir=$(ROOT) --prefix={{root}}
+     configure: ./configure
+  install:
+     makeinstall: make DESTDIR=$(ROOT) install 
+  files:
+    - "{{root}}/bin/*"
+    - "{{root}}/include/*"
+    - "{{root}}/lib/*"
+    - "{{root}}/lib64/*/*"
+    - "{{root}}/share/man/*/*"
