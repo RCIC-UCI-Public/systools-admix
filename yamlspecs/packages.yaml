@@ -73,6 +73,7 @@ build:
    - zfs-auto-snapshot
    - rclone
    - !ifeq "{{site.os_release}},7,xcat,"
+   - libcgroup
 manifest:
    - "{{bootstrap}}"
    - "{{build}}"
