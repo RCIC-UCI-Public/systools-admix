@@ -1,0 +1,41 @@
+!include rcic-package.yaml
+---
+- package: smem
+  name: smem
+  versions: !include versions.yaml
+  version: "{{versions.smem}}"
+  vendor_source:  https://www.selenic.com/smem/
+  baserpm: "rcic-{{name}}"
+  description: |
+    Smem {{version}} is a python tool that can give numerous reports on memory usage on Linux
+    systems. Unlike existing tools, smem can report proportional set size (PSS),
+    which is a more meaningful representation of the amount of memory used by
+    libraries and applications in a virtual memory system. Build form the latest
+    available mercurial repo at http://selenic.com/repo/smem  at tag
+    changeset 82:2ab5040d5633
+  root: /usr
+  src_dir: "{{name}}"
+  build:
+    configure: echo no build required
+    pkgmake:  echo no build required
+  install:
+    makeinstall: >
+      sed -i "s/env python/env python3/" smem;
+      mkdir -p $(ROOT)/{{root}}/bin;
+      mkdir -p $(ROOT)/{{root}}/share/man/man8;
+      mkdir -p $(ROOT)/{{root}}/share/doc/smem;
+      install -m 755 smem $(ROOT)/{{root}}/bin;
+      install -m 644 smem.8 $(ROOT)/{{root}}/share/man/man8;
+      install -m 644 COPYING $(ROOT)/{{root}}/share/doc/smem
+  files:
+    - "{{root}}/bin/*"
+    - "{{root}}/share/*"
+  conflicts: smem
+
+# Per https://www.selenic.com/smem/
+# download latest mercurial repo and create gz distro file
+# for building this package
+# hg clone http://selenic.com/repo/smem
+# tar czvf smem-1.5.tar.gz  --exclude .hg smem
+#
+# set release 10 to be higher than one in EPEL

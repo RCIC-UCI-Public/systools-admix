@@ -76,6 +76,7 @@ build:
    - pdsh
    - !ifeq "{{site.os_release}},7,xcat,"
    - libcgroup
+   - smem
 manifest:
    - "{{bootstrap}}"
    - "{{build}}"
