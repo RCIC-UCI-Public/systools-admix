@@ -1,0 +1,10 @@
+!include awscli.yaml
+!include rcic-module.yaml
+---
+- package: awscli module
+  category: TOOLS
+  module:
+    prereq:
+    setenv:
+    prepend_path:
+      - PATH {{root}}/bin

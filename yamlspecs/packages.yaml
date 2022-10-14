@@ -77,6 +77,8 @@ build:
    - !ifeq "{{site.os_release}},7,xcat,"
    - libcgroup
    - smem
+   - awscli
+   - awscli-module
 manifest:
    - "{{bootstrap}}"
    - "{{build}}"

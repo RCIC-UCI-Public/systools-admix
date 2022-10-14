@@ -1,0 +1,33 @@
+!include rcic-package.yaml
+!include rpm.yaml
+---
+- package: awscli 
+  name: awscli 
+  versions: !include versions.yaml
+  version: "{{versions.awscli}}"
+  extension: zip
+  vendor_source: https://awscli.amazonaws.com/{{name}}-exe-linux-x86_64-{{version}}.{{extension}}
+  src_dir: aws
+  awsbc: aws_bash_completer
+  description: | 
+     This package provides a unified command line interface to Amazon Web Services
+     AWS CLI v2 release {{version}}.
+  build:
+    pkgmake: echo
+  install:
+    makeinstall: >
+      mkdir -p $(ROOT)/etc/bash_completion.d;
+      echo "\# Bash completion for aws command" > $(ROOT)/etc/bash_completion.d/{{awsbc}};
+      echo "complete -C aws_completer aws" >> $(ROOT)/etc/bash_completion.d/{{awsbc}};
+      mkdir -p $(ROOT){{root}}; 
+      if [ ! -d {{root}} ]; then mkdir -p {{root}}; DIRCREATED=1; fi;
+      mount --bind $(ROOT){{root}} {{root}};
+      ./install  -i {{root}} -b {{root}}/bin;
+      umount {{root}};
+      if [ "$$DIRCREATED" == "1" ]; then rm -rf {{root}}; fi
+  rpm:
+    extras: *RpmNone
+  rpmBuildIdLinks: none
+  files:
+    - "{{parent}}"
+    - /etc/bash_completion.d/*
