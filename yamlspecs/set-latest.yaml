@@ -1,0 +1,9 @@
+# Updated versions of rclone, go, awscli 
+!include packages.yaml
+---
+versions: versions-latest.yaml
+bootstrap:
+build:
+  - rclone 
+  - awscli
+  - awscli-module
