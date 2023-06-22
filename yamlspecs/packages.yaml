@@ -24,6 +24,8 @@ system:
    - cryptsetup
    - ncurses-devel
    - lvm2
+   - readline-devel
+   - pam-devel
    - !ifeq "{{site.os_release}},7,{{system7}},"
 system7:
    - syslinux-devel
@@ -60,7 +62,6 @@ build:
    - HTML-Form
    - IO-Stty
    - Net-HTTPS-NB
-   - ansible-lint
    - scandir
    - pathlib2
    - OLE-Storage_Lite
@@ -79,6 +80,7 @@ build:
    - smem
    - awscli
    - awscli-module
+   # - ansible-lint
 manifest:
    - "{{bootstrap}}"
    - "{{build}}"
