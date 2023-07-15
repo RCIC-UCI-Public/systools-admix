@@ -73,7 +73,7 @@ build:
    - collectd
    - hostlist
    - zfs-auto-snapshot
-   - rclone
+#  - rclone
    - pdsh
    - !ifeq "{{site.os_release}},7,xcat,"
    - libcgroup
