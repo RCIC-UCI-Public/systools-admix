@@ -85,4 +85,4 @@ manifest:
    - "{{bootstrap}}"
    - "{{build}}"
 sets:
-   - latest
+   - group1
