@@ -78,8 +78,6 @@ build:
    - !ifeq "{{site.os_release}},7,xcat,"
    - libcgroup
    - smem
-   - awscli
-   - awscli-module
    # - ansible-lint
 manifest:
    - "{{bootstrap}}"
