@@ -43,4 +43,3 @@ genders:
   dash: "1-27-3"
 libcgroup: "2.0.2"
 smem: "1.5"
-awscli: "2.8.3"

@@ -5,5 +5,5 @@
 
 include $(YAML2RPM_HOME)/sys/Makefile
 clean:
-	- /bin/rm -r  ../logrotate.d ../rsyslog.d ../BUILD/xCAT* ../BUILD/etc ../BUILD/*scripts ../BUILD/perl-xCAT* 
-	- /bin/rm -f ../BUILD/core-rpms* ../BUILD/LICENSE.html
+	- /bin/rm -rf  ../logrotate.d ../rsyslog.d ../BUILD/xCAT* ../BUILD/etc ../BUILD/*scripts ../BUILD/perl-xCAT*
+	- /bin/rm -ff ../BUILD/core-rpms* ../BUILD/LICENSE.html
