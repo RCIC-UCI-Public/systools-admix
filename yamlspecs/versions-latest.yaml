@@ -1,5 +1,5 @@
 !include site.yaml
 ---
-rclone: "1.62.2"
+rclone: "1.67.0"
 go: "1.20.4"
 awscli: "2.11.21"
