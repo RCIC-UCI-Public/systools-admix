@@ -1,7 +1,7 @@
 # Updated versions of rclone, go, awscli 
 !include packages.yaml
 ---
-versions: versions-group1.yaml
+versions: versions-2023.yaml
 bootstrap:
 build:
   - rclone 

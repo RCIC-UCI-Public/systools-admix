@@ -26,15 +26,6 @@ system:
    - lvm2
    - readline-devel
    - pam-devel
-   - !ifeq "{{site.os_release}},7,{{system7}},"
-system7:
-   - syslinux-devel
-   - bridge-utils
-   - ntp
-   - screen
-   - ntp-perl
-   - python-devel
-   - python-setuptools
 bootstrap:
    - Test-SharedFork
    - Test-TCP
@@ -44,18 +35,9 @@ bootstrap:
    - bcrypt
    - pynacl
    - !ifeq "{{site.os_release}},8,paramiko,"
-   - !ifeq "{{site.os_release}},7,cryptography,"
    - ansible
    - cffi
    - genders
-xcat:
-   - conserver-xcat
-#   - goconserver
-   - ipmitool-xcat
-   - syslinux-xcat
-   - xcat-core
-   - xnba-undi
-   
 build:
    - Crypt-Rijndael
    - Expect
@@ -73,14 +55,11 @@ build:
    - collectd
    - hostlist
    - zfs-auto-snapshot
-#  - rclone
    - pdsh
-   - !ifeq "{{site.os_release}},7,xcat,"
    - libcgroup
    - smem
-   # - ansible-lint
 manifest:
    - "{{bootstrap}}"
    - "{{build}}"
 sets:
-   - group1
+   - "2023"

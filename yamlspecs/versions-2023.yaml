@@ -1,4 +1,4 @@
-!include site.yaml
+!include versions.yaml
 ---
 rclone:
   version: "1.69.0"
