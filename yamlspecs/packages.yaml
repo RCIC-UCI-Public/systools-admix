@@ -5,6 +5,7 @@ system:
    - perl-Module-Build
    - perl-Sys-Syslog
    - perl-ExtUtils-MakeMaker
+   - perl-FindBin
    - gnu-efi-devel
    - nasm
    - binutils-devel
@@ -35,7 +36,7 @@ bootstrap:
    - bcrypt
    - pynacl
    - !eval "'paramiko' if {{site.os_release}} >= 8 else ''"
-   - ansible
+   - !eval "'ansible' if {{site.os_release}} <= 8 else ''"
    - cffi
    - genders
 build:
