@@ -15,7 +15,7 @@
      source code: {{vendor_source}}
   root: "/usr/lib/python{{pkg_defaults.site.python_sys}}/site-packages"
   
-  pyyaml: !ifeq "{{os_release}},8,{{pypkg}}-PyYAML,PyYAML"
+  pyyaml: !eval "'{{pypkg}}-PyYAML' if {{os_release}} >=8 else 'PyYAML'"
   requires:
      - "{{pypkg}}-bcrypt"
      - "{{pypkg}}-paramiko"

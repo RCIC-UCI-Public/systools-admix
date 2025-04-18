@@ -6,7 +6,7 @@
   versions: !include versions.yaml
   description_src: Source code {{vendor_source}}
 
-  pypkg: !ifeq "{{pkg_defaults.site.os_release}},8,python3,python"
+  pypkg: !eval "'python3' if {{pkg_defaults.site.os_release}} >= 8 else 'python'"
   baserpm: "{{pypkg}}-{{name}}"
 
   root: "{{pkg_defaults.python_pkgs}}"

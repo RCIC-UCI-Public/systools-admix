@@ -34,7 +34,7 @@ bootstrap:
    - IO-Select
    - bcrypt
    - pynacl
-   - !ifeq "{{site.os_release}},8,paramiko,"
+   - !eval "'paramiko' if {{site.os_release}} >= 8 else ''"
    - ansible
    - cffi
    - genders
