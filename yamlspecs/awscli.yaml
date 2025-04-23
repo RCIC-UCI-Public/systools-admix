@@ -15,13 +15,14 @@
   build:
     pkgmake: echo
   install:
+    bind: !eval "'bindfs' if  {{versions.os_release}} >= 9 else 'mount --bind'"
     makeinstall: >
       mkdir -p $(ROOT)/etc/bash_completion.d;
       echo "\# Bash completion for aws command" > $(ROOT)/etc/bash_completion.d/{{awsbc}};
       echo "complete -C aws_completer aws" >> $(ROOT)/etc/bash_completion.d/{{awsbc}};
       mkdir -p $(ROOT){{root}}; 
       if [ ! -d {{root}} ]; then mkdir -p {{root}}; DIRCREATED=1; fi;
-      mount --bind $(ROOT){{root}} {{root}};
+      {{install.bind}} $(ROOT){{root}} {{root}};
       ./install  -i {{root}} -b {{root}}/bin;
       umount {{root}};
       if [ "$$DIRCREATED" == "1" ]; then rm -rf {{root}}; fi
