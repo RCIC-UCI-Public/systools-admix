@@ -52,6 +52,7 @@ build:
    - Unicode-Map
    - Jcode
    - Spreadsheet-WriteExcel
+   - Env
    - nmon
    - collectd
    - hostlist
