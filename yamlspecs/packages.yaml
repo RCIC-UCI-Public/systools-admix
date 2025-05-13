@@ -28,40 +28,10 @@ system:
    - readline-devel
    - pam-devel
 bootstrap:
-   - Test-SharedFork
-   - Test-TCP
-   - HTTP-Server-Simple
-   - HTTP-Async
-   - IO-Select
-   - bcrypt
-   - pynacl
-   - !eval "'paramiko' if {{site.os_release}} >= 8 else ''"
-   - !eval "'ansible' if {{site.os_release}} <= 8 else ''"
-   - cffi
-   - genders
 build:
-   - Crypt-Rijndael
-   - Expect
-   - HTML-Form
-   - IO-Stty
-   - Net-HTTPS-NB
-   - scandir
-   - pathlib2
-   - OLE-Storage_Lite
-   - Parse-RecDescent
-   - Unicode-Map
-   - Jcode
-   - Spreadsheet-WriteExcel
-   - Env
-   - nmon
-   - collectd
-   - hostlist
-   - zfs-auto-snapshot
-   - pdsh
-   - libcgroup
-   - smem
 manifest:
    - "{{bootstrap}}"
    - "{{build}}"
 sets:
+   - base
    - "2023"
