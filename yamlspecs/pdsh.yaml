@@ -1,7 +1,7 @@
-!include rcic-package.yaml 
+!include rcic-package.yaml
 ---
-- package: pdsh 
-  name: pdsh 
+- package: pdsh
+  name: pdsh
   versions: !include versions.yaml
   version: "{{versions.pdsh}}"
   release: "6"
@@ -9,9 +9,9 @@
   pkgname: "{{name}}"
   root: /usr
   description: |
-     pdsh {{version}}  is a multithreaded remote shell client which executes commands on
+     Pdsh is a multithreaded remote shell client which executes commands on
      multiple remote hosts in parallel.  Pdsh can use several different
-     remote shell services, including standard "rsh", Kerberos IV, and ssh. 
+     remote shell services, including standard "rsh", Kerberos IV, and ssh.
   build:
      configure: ./configure
      configure_args: --without-rsh --with-ssh --with-readline --with-genders --enable-static-modules

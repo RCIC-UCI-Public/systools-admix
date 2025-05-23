@@ -1,6 +1,6 @@
 !include perlmodule.yaml
 ---
-- package: OLE::Storage_Lite Perl module 
+- package: OLE::Storage_Lite Perl module
   name: OLE-Storage_Lite
   version: "{{versions.OLE_Storage_Lite}}"
   cpanurl: https://cpan.metacpan.org/authors/id/J/JM/JMCNAMARA

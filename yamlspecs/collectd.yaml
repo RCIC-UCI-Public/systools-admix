@@ -6,8 +6,6 @@
   version: "{{versions.collectd}}"
   vendor_source:  https://github.com/downloads/appliedsec/{{name}}/{{name}}-{{version}}.{{extension}}
   description: |
-     Collectd {{version}} Python module implements the binary protocol used by the collectd 
-     Network plugin to let you send arbitrary numeric data to collectd servers. 
-     Other than turning on the Network plugin on the destination collectd server, 
-     no configuration is needed.
+     Python implementation of the binary protocol used by the collectd Network plugin.
+     Collectd let you send arbitrary numeric data to collectd servers.
      {{description_src}}

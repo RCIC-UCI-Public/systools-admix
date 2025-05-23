@@ -1,6 +1,6 @@
 !include perlmodule.yaml
 ---
-- package: Spreadsheet::WriteExcel Perl module 
+- package: Spreadsheet::WriteExcel Perl module
   name: Spreadsheet-WriteExcel
   version: "{{versions.Spreadsheet_WriteExcel}}"
   cpanurl: https://cpan.metacpan.org/authors/id/J/JM/JMCNAMARA

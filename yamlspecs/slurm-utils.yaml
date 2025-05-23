@@ -1,7 +1,7 @@
 !include rcic-package.yaml
 ---
 - package: slurm-utils
-  name: slurm-utils 
+  name: slurm-utils
   pkgname: "{{name}}"
   root: /usr/bin
   version: "0.1"

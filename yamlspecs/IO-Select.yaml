@@ -1,7 +1,7 @@
 !include perlmodule.yaml
 ---
 - package: perl-IO-Select
-  name: IO 
+  name: IO
   version: "{{versions.IO_Select}}"
   pkgname: "{{package}}"
   cpanurl:  https://cpan.metacpan.org/authors/id/T/TO/TODDR

@@ -1,6 +1,6 @@
 !include perlmodule.yaml
 ---
-- package: perl-HTTP-Async 
-  name: HTTP-Async 
+- package: perl-HTTP-Async
+  name: HTTP-Async
   version: "{{versions.HTTP_Async}}"
   cpanurl:  https://cpan.metacpan.org/authors/id/K/KA/KAORU

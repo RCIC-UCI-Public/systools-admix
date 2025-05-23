@@ -1,13 +1,13 @@
 !include rcic-package.yaml
 ---
-- package: perlmodule 
-  name: perlmodule 
+- package: perlmodule
+  name: perlmodule
   versions: !include versions.yaml
   version: "1.0"
   cpanurl:  https://cpan.metacpan.org/authors/id/E/EX/EXODIST
   vendor_source:  "{{cpanurl}}/{{name}}-{{version}}.{{extension}}"
   description: |
-     perl {{name}} version {{version}}. Configured with {{build.preconfigure}}. 
+     Perl {{name}} version {{version}}. Configured with {{build.preconfigure}}.
      Source code {{vendor_source}}
   baserpm: "perl-{{name}}"
   root: "/usr"
@@ -17,14 +17,14 @@
   ## See : https://stackoverflow.com/questions/41527057/installing-perl-modules-to-a-specific-location
   build: &BaseBuild
     style: "Makefile.PL"
-    preconfigure: >   
+    preconfigure: >
        PERL5LIB={{root}}/lib64/perl5
        PERL_MM_OPT=INSTALL_BASE={{root}} INSTALLPRIVLIB={{perl5lib}} INSTALLARCHLIB={{perl5lib}} INSTALLSITELIB={{perl5lib}} perl {{build.style}}
     configure: echo used perl {{build.style}}
     pkgmake: make
   install: &BaseInstall
     makeinstall: PERL_INSTALL_ROOT=$(ROOT) make install
-    installextra: > 
+    installextra: >
       find $(ROOT) -name .packlist | xargs /bin/rm;
       find $(ROOT) -type f | sed -e "s%$(ROOT)%%" | sed -e 's%/usr/man/man3/.*%/usr/man/man3/*%' | sort | uniq > ../manifest
   fileslist: manifest
@@ -32,11 +32,11 @@
     - "{{root}}/man"
     - "{{root}}/lib/perl5"
 
-  ## This is Template for Build.PL style builds 
+  ## This is Template for Build.PL style builds
   buildBuildPL: &BuildPL
     <<: *BaseBuild
     style: "Build.PL"
-    preconfigure: >   
+    preconfigure: >
        PERL5LIB={{root}}/lib64/perl5
        PERL_MB_OPT='--install_base={{root}} --install_privlib={{perl5lib}} --install_archlib={{perl5lib}} --install_sitelib={{perl5lib}}' perl {{build.style}}
     pkgmake:

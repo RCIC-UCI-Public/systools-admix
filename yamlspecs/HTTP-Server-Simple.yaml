@@ -1,6 +1,6 @@
 !include perlmodule.yaml
 ---
-- package: perl-HTTP-Server-Simple 
-  name: HTTP-Server-Simple 
+- package: perl-HTTP-Server-Simple
+  name: HTTP-Server-Simple
   version: "{{versions.HTTP_Server_Simple}}"
   cpanurl:  https://cpan.metacpan.org/authors/id/B/BP/BPS

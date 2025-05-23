@@ -1,6 +1,6 @@
 !include perlmodule.yaml
 ---
 - package: perl-Crypt-Rijndael
-  name: Crypt-Rijndael 
+  name: Crypt-Rijndael
   version: "{{versions.Crypt_Rijndael}}"
   cpanurl:  https://cpan.metacpan.org/authors/id/L/LE/LEONT

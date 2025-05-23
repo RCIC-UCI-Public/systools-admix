@@ -1,13 +1,13 @@
 !include pymodule.yaml
 ---
 - package: hostlist
-  name: hostlist 
+  name: hostlist
   version: "{{versions.hostlist}}"
   vendor_source:  https://files.pythonhosted.org/packages/f4/75/7e1178b65cc6afb974e56eb30d4941dad9219a017705ed58a9943d6803b0/python-{{name}}-{{version}}.{{extension}}
   src_tarball: python-{{name}}-{{version}}.{{extension}}
   src_dir: "python-{{name}}-{{version}}"
   description: |
-     The Python module hostlist.py {{version}} knows how to expand and collect LLNL hostlists, as used by
+     The Python module hostlist.py. It knows how to expand and collect LLNL hostlists, as used by
      SLURM, pdsh, powerman, and genders, among other projects.
      {{description_src}}
   files:

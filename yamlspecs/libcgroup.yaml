@@ -9,7 +9,7 @@
   description: >
     Libcgroup {{version}} is a Library, command-line utility programs,
     services and daemons to control and monitor control groups.
-    This is a compiled version using distro from git. 
+    This is a compiled version using distro from git.
     Add cgred and cgconfig service files based on  what was
     in CentOS 7 original RPMS. This setup is for cgroups v1 on linux 8.
   root: /usr
@@ -33,7 +33,7 @@
       $(INSTALL) -m 644 samples/cgrules.conf $(ROOT)/etc/cgrules.conf;
       $(INSTALL) -m 644 samples/cgsnapshot_blacklist.conf $(ROOT)/etc/cgsnapshot_blacklist.conf
   files:
-    - /etc/* 
+    - /etc/*
     - "{{root}}/bin/*"
     - "{{root}}/sbin/*"
     - "{{root}}/lib/*"
@@ -42,7 +42,7 @@
   conflicts: libcgroup libcgroup-tools
 
 # In version 3.0.0 cgclear tool was removed. Without it cant run cgred service
-# downgrading to 2.0.2 
+# downgrading to 2.0.2
 # for 3.0.0 need extra settings
 # version_major: "{{versions.libcgroup_major}}"
 # version_major: "{{versions.libcgroup_major}}"

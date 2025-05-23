@@ -6,7 +6,7 @@
   vendor_source: https://github.com/mcmtroffaes/pathlib2/archive/{{version}}.{{extension}}
   root: "{{purepyroot}}"
   description: |
-     Object-oriented filesystem paths {{name}} {{version}} 
+     Object-oriented filesystem paths {{name}} {{version}}.
      source code: {{vendor_source}}
   requires:
     - "{{pypkg}}-six"

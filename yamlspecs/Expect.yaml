@@ -1,6 +1,6 @@
 !include perlmodule.yaml
 ---
 - package: perl-Expect
-  name: Expect 
+  name: Expect
   version: "{{versions.Expect}}"
   cpanurl:  https://cpan.metacpan.org/authors/id/R/RG/RGIERSIG

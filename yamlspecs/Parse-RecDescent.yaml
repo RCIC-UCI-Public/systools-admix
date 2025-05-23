@@ -1,6 +1,6 @@
 !include perlmodule.yaml
 ---
-- package: Parse::RecDescent Perl module 
+- package: Parse::RecDescent Perl module
   name: Parse-RecDescent
   version: "{{versions.Parse_RecDescent}}"
   cpanurl: https://cpan.metacpan.org/authors/id/J/JT/JTBRAUN

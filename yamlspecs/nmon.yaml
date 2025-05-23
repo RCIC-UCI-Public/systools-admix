@@ -1,18 +1,18 @@
-!include rcic-package.yaml 
+!include rcic-package.yaml
 ---
 - package: nmon
-  name: nmon 
+  name: nmon
   versions: !include versions.yaml
   version: "{{versions.nmon}}"
   sourcefile: lmon16m.c
   addfile: "{{sourcefile}}"
   pkgname: "{{name}}"
-  vendor_source: http://sourceforge.net/projects/nmon/files/{{sourcefile}} 
+  vendor_source: http://sourceforge.net/projects/nmon/files/{{sourcefile}}
   root: /usr/bin
-  no_src_dir: True 
+  no_src_dir: True
   no_src_tarball: True
   description: |
-     Nmon {{version}}. 
+     Nmon {{version}}.
   build:
      pkgmake: cc -o {{name}} {{sourcefile}} -lm -lncurses
   install:

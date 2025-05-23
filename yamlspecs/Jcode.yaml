@@ -1,6 +1,6 @@
 !include perlmodule.yaml
 ---
-- package: Jcode Perl module 
+- package: Jcode Perl module
   name: Jcode
   version: "{{versions.Jcode}}"
   cpanurl: https://cpan.metacpan.org/authors/id/D/DA/DANKOGAI
