@@ -10,7 +10,7 @@
   src_dir: aws
   awsbc: aws_bash_completer
   description: |
-     Awscli  provides a unified command line interface to Amazon Web Services.
+     Awscli provides a unified command line interface to Amazon Web Services.
   build:
     pkgmake: echo
   install:
