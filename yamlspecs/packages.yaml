@@ -27,6 +27,7 @@ system:
    - lvm2
    - readline-devel
    - pam-devel
+   - !ifeq "{{site.os_release}},9,bindfs,"
 bootstrap:
 build:
 manifest:
