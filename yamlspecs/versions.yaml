@@ -34,7 +34,9 @@ pdsh: "2.34"
 genders:
   version: "1.27.3"
   dash: "1-27-3"
-libcgroup: "2.0.2"
+libcgroup: 
+  version: "2.0.2"
+  release: "2"
 smem: "1.5"
 # added for Rocky 9. The perl-Env rpm is no longer available
 Env: "1.04"

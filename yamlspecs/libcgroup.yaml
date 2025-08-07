@@ -3,7 +3,8 @@
 - package: libcgroup
   name: libcgroup
   versions: !include versions.yaml
-  version: "{{versions.libcgroup}}"
+  version: "{{versions.libcgroup.version}}"
+  release: "{{versions.libcgroup.release}}"
   vendor_source: https://github.com/libcgroup/libcgroup/releases/download/v{{version}}/{{name}}-{{version}}.{{extension}}
   baserpm: "rcic-{{name}}"
   description: >
