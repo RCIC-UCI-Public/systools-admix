@@ -1,0 +1,11 @@
+!include pymodule.yaml
+---
+- package: ansible_modules_hashivault
+  name: ansible_modules_hashivault
+  version: "{{versions.hashivault}}"
+  vendor_source: https://files.pythonhosted.org/packages/4d/67/8d9d5ca8adef6645a846e0d6780e0139a4e86f1c5b2a54d69aa9acc09bfd/{{name}}-{{version}}.{{extension}}
+  description: |
+    Ansible modules for Hashicorp Vault.
+  files:
+    - "{{root}}"
+    - /usr/lib/*

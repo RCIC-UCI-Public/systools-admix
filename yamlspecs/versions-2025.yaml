@@ -1,0 +1,7 @@
+!include versions.yaml
+---
+charset_normalizer: "3.4.4"
+certifi: "2025.10.5"
+requests: "2.32.5"
+hvac: "2.3.0"
+hashivault: "5.4.0"

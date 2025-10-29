@@ -1,0 +1,11 @@
+!include pymodule.yaml
+---
+- package: requests
+  name: requests
+  version: "{{versions.requests}}"
+  vendor_source: https://files.pythonhosted.org/packages/c9/74/b3ff8e6c8446842c3f5c837e9c3dfcfe2018ea6ecef224c710c85ef728f4/{{name}}-{{version}}.{{extension}}
+  description: |
+    Python HTTP for Humans.
+  files:
+    - "{{root}}"
+    - /usr/lib/*

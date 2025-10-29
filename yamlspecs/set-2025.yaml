@@ -1,0 +1,10 @@
+!include packages.yaml
+---
+versions: versions-2025.yaml
+bootstrap:
+build:
+  - charset_normalizer
+  - certifi
+  - requests
+  - hvac
+  - hashivault

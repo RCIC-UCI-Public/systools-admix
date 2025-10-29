@@ -1,0 +1,16 @@
+!include pymodule.yaml
+---
+- package: hvac
+  name: hvac
+  version: "{{versions.hvac}}"
+  vendor_source: https://files.pythonhosted.org/packages/48/a4/c0b698a7250b7a5c2956427406560701862215c646e079a7907846608f44/{{name}}-{{version}}.{{extension}}
+  description: |
+    HashiCorp Vault API client
+  build:
+    pkgmake: echo 'Build performed in install with pip'
+  install:
+    makeinstall: >
+      pip install --root $(ROOT) --no-deps ../{{src_tarball}}
+  files:
+    - "{{root}}"
+    - /usr/lib/*

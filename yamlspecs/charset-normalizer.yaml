@@ -1,0 +1,21 @@
+!include pymodule.yaml
+---
+- package: charset_normalizer
+  name: charset_normalizer
+  no_src_dir: True
+  version: "{{versions.charset_normalizer}}"
+  extension: whl
+  suffix: py3-none-any
+  src_tarball: "{{name}}-{{version}}-{{suffix}}.{{extension}}"
+  vendor_source: https://files.pythonhosted.org/packages/0a/4c/925909008ed5a988ccbb72dcc897407e5d6d3bd72410d69e051fc0c14647/{{src_tarball}}
+  description: |
+    The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.
+  build:
+    pkgmake: echo 'Using wheel distro'
+  install:
+    makeinstall: >
+       pip install --root $(ROOT) --no-deps {{src_tarball}}
+  files:
+    - "{{root}}"
+    - /usr/lib/*
+    - /usr/bin/*

@@ -1,0 +1,11 @@
+!include pymodule.yaml
+---
+- package: certifi
+  name: certifi
+  version: "{{versions.certifi}}"
+  vendor_source: https://files.pythonhosted.org/packages/4c/5b/b6ce21586237c77ce67d01dc5507039d444b630dd76611bbca2d8e5dcd91/{{name}}-{{version}}.{{extension}}
+  description: |
+    Python package for providing Mozilla's CA Bundle.
+  files:
+    - "{{root}}"
+    - /usr/lib/*

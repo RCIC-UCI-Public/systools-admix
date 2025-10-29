@@ -36,3 +36,8 @@ c7bdd20c5ba211b0ae80339c671c602d6a3a5a66  sources/pdsh-2.34.tar.gz 1n21lXnHYvvIX
 ec11339fa5f03662f269e05bade3d002d4405ad4  sources/rclone-1.67.0.tar.gz
 1a69cbcac4f1bf324607f6757eaccdef012e3061  sources/rclone-v1.69.0-linux-amd64.zip
 754876a099616c14cd7eadd65c56d9707aefc955  sources/Env-1.04.tar.gz
+f8e205046cfeb85815f79705565c73be32e5c193  sources/charset_normalizer-3.4.4-py3-none-any.whl
+a812ee84324540519b7c66603c58ebe881bad2d4  sources/certifi-2025.10.5.tar.gz
+108b003cf29423eefec13209e99f363960d9951b  sources/requests-2.32.5.tar.gz
+af35d55a26b3da8ced10ee9b4615ef61315216eb  sources/hvac-2.3.0.tar.gz
+384f491ebd5be6841370867313c2d6027b7f29bd  sources/ansible_modules_hashivault-5.4.0.tar.gz
