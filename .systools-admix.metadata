@@ -41,3 +41,4 @@ a812ee84324540519b7c66603c58ebe881bad2d4  sources/certifi-2025.10.5.tar.gz
 108b003cf29423eefec13209e99f363960d9951b  sources/requests-2.32.5.tar.gz
 af35d55a26b3da8ced10ee9b4615ef61315216eb  sources/hvac-2.3.0.tar.gz
 384f491ebd5be6841370867313c2d6027b7f29bd  sources/ansible_modules_hashivault-5.4.0.tar.gz
+1c5f6dea2c322936d54e15c414114a2ee19f1cdb  sources/rclone-v1.70.3-linux-amd64.zip

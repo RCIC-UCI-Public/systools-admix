@@ -1,7 +1,7 @@
 !include versions.yaml
 ---
 rclone:
-  version: "1.69.0"
+  version: "1.70.3"
   arch: "linux-amd64"
 go: "1.20.4"
 awscli: "2.11.21"
