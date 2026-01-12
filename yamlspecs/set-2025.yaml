@@ -3,7 +3,7 @@
 versions: versions-2025.yaml
 bootstrap:
 build:
-  - charset_normalizer
+  - charset-normalizer
   - certifi
   - requests
   - hvac
