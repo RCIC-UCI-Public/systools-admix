@@ -4,6 +4,5 @@
 versions: versions-2023.yaml
 bootstrap:
 build:
-  - rclone
   - awscli
   - awscli-module
