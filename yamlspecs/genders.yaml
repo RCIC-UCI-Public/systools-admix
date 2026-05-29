@@ -17,11 +17,13 @@
      typically replicated on every node of the cluster. It describes the layout and configuration of the cluster
      so that tools and scripts can sense the variations of cluster nodes. By abstracting this information
      into a plain text file, it becomes possible to change the configuration of a cluster by modifying only one file
+  cflags: "-Wno-error=incompatible-pointer-types -fPIE"
   build:
      configure_args: --without-java-extensions --with-extension-destdir=$(ROOT) --prefix={{root}}
      configure: ./configure
+     CFLAGS: !eval "'CFLAGS={{cflags}}' if int({{versions.os_release}}) >= 10 else ''"
   install:
-     makeinstall: make DESTDIR=$(ROOT) install
+     makeinstall: make "{{build.CFLAGS}}" DESTDIR=$(ROOT) install
   files:
     - "{{root}}/bin/*"
     - "{{root}}/include/*"
