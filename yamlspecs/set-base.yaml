@@ -7,12 +7,14 @@ bootstrap:
    - HTTP-Server-Simple
    - HTTP-Async
    - IO-Select
+   - !eval "'{{bootstrap_ansible}}' if int({{site.os_release}}) <= 8 else ''"
+   - !eval "'cffi' if {{site.os_release}} <= 8 else ''"
+   - genders
+bootstrap_ansible:
    - bcrypt
    - pynacl
    - !eval "'paramiko' if {{site.os_release}} >= 8 else ''"
-   - !eval "'ansible' if {{site.os_release}} <= 8 else ''"
-   - !eval "'cffi' if int({{site.os_release}}) < 10 else ''"
-   - genders
+   - ansible
 build:
    - Crypt-Rijndael
    - Expect
