@@ -1,4 +1,3 @@
-# Updated versions of rclone, go, awscli
 !include packages.yaml
 ---
 versions: versions-2023.yaml
