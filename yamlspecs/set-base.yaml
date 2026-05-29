@@ -11,7 +11,7 @@ bootstrap:
    - pynacl
    - !eval "'paramiko' if {{site.os_release}} >= 8 else ''"
    - !eval "'ansible' if {{site.os_release}} <= 8 else ''"
-   - cffi
+   - !eval "'cffi' if int({{site.os_release}}) < 10 else ''"
    - genders
 build:
    - Crypt-Rijndael
@@ -31,6 +31,6 @@ build:
    - collectd
    - hostlist
    - zfs-auto-snapshot
-   - pdsh
+   - !eval "'pdsh' if int({{site.os_release}}) < 10 else ''"
    - libcgroup
    - smem

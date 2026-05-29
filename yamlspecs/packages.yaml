@@ -28,6 +28,7 @@ system:
    - readline-devel
    - pam-devel
    - !ifeq "{{site.os_release}},9,bindfs,"
+   - !eval "'python3-cffi' if int({{site.os_release}}) >= 10 else ''"
 bootstrap:
 build:
 manifest:
