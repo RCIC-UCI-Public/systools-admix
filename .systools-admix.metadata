@@ -39,3 +39,5 @@ a812ee84324540519b7c66603c58ebe881bad2d4  sources/certifi-2025.10.5.tar.gz
 108b003cf29423eefec13209e99f363960d9951b  sources/requests-2.32.5.tar.gz
 af35d55a26b3da8ced10ee9b4615ef61315216eb  sources/hvac-2.3.0.tar.gz
 384f491ebd5be6841370867313c2d6027b7f29bd  sources/ansible_modules_hashivault-5.4.0.tar.gz
+2f63eaf5d4c645a9071cdfa852f7a1eced1d6b19  sources/genders-1-32-1.tar.gz
+aa0ee9edc466c216cfa8b195b7e1e93a06f39dfa  sources/pdsh-2.36.tar.gz

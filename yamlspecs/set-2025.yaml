@@ -8,3 +8,5 @@ build:
   - requests
   - hvac
   - hashivault
+  - !OScmp ">=,10,genders,"
+  - !OScmp ">=,10,pdsh,"
