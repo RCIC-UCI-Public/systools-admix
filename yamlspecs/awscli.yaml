@@ -14,7 +14,7 @@
   build:
     pkgmake: echo
   install:
-    bind: !eval "'bindfs' if  {{versions.os_release}} >= 9 else 'mount --bind'"
+    bind: !OScmp ">=,9,bindfs,mount --bind"
     makeinstall: >
       mkdir -p $(ROOT)/etc/bash_completion.d;
       echo "\# Bash completion for aws command" > $(ROOT)/etc/bash_completion.d/{{awsbc}};
