@@ -27,8 +27,8 @@ system:
    - lvm2
    - readline-devel
    - pam-devel
-   - !ifeq "{{site.os_release}},9,bindfs,"
-   - !eval "'python3-cffi' if int({{site.os_release}}) >= 9 else ''"
+   - !OScmp ">=,9,bindfs,"
+   - !OScmp ">=,9,python3-cffi,"
 bootstrap:
 build:
 manifest:
