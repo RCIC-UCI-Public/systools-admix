@@ -1,4 +1,3 @@
-site: !include site.yaml
 system:
    - perl-JSON
    - perl-DBI
