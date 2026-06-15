@@ -1,4 +1,5 @@
 system:
+   - perl-devel
    - perl-JSON
    - perl-DBI
    - perl-Module-Build
