@@ -10,3 +10,4 @@ genders:
   dash: "1-32-1"
   java: "21"
 pdsh: "2.36"
+awscli: "2.34.11"
